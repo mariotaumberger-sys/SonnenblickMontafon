@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Sonnenblick Montafon – Exklusive Ferienwohnung Bartolomäberg</title>
+<meta name="description" content="Sonnenblick Montafon – Exklusive Ferienwohnung in Bartolomäberg, Vorarlberg. 50 m², Bergblick, 2 Schlafzimmer.">
+<meta name="keywords" content="Ferienwohnung Montafon, Ferienwohnung Bartolomäberg, Apartment Montafon, Urlaub Vorarlberg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/*──────────────────────────────────────────────
+  ROOT & RESET
+──────────────────────────────────────────────*/
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ww:#FAFAF7;--anth:#1C1C1A;--beige:#E8E0D0;--beigeL:#F3EEE6;
+  --gold:#C9A96E;--goldD:#A8845A;--forest:#2D3A2E;
+  --muted:#7A7A72;--light:#B0A898;
+  --border:rgba(28,28,26,.1);--borderG:rgba(201,169,110,.3);
+  --serif:'Cormorant Garant',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --tr:.3s ease;--maxW:1200px
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--ww);color:var(--anth);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none}
+
+/*──────────────────────────────────────────────
+  NAV
+──────────────────────────────────────────────*/
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:background var(--tr),box-shadow var(--tr),padding var(--tr)}
+nav.scrolled{background:rgba(250,250,247,.97);backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 var(--border);padding:14px 48px}
+.nav-logo{font-family:var(--serif);font-size:20px;font-weight:400;color:#fff;
+  text-decoration:none;transition:color var(--tr);letter-spacing:.02em}
+nav.scrolled .nav-logo{color:var(--anth)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.85);text-decoration:none;transition:color var(--tr)}
+nav.scrolled .nav-links a{color:var(--muted)}
+.nav-links a:hover,nav.scrolled .nav-links a:hover{color:var(--gold)}
+.nav-cta{font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:10px 24px;border:1px solid rgba(255,255,255,.5);
+  color:#fff;background:none;cursor:pointer;text-decoration:none;transition:all var(--tr)}
+nav.scrolled .nav-cta{border-color:var(--gold);color:var(--anth)}
+.nav-cta:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:1.5px;background:#fff;transition:all var(--tr)}
+nav.scrolled .hamburger span{background:var(--anth)}
+
+/*──────────────────────────────────────────────
+  MOBILE MENU
+──────────────────────────────────────────────*/
+.mob-menu{position:fixed;inset:0;z-index:90;background:var(--anth);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:24px;
+  transform:translateX(100%);transition:transform var(--tr)}
+.mob-menu.open{transform:translateX(0)}
+.mob-menu a{font-family:var(--serif);font-size:28px;font-weight:300;color:#fff;text-decoration:none}
+.mob-menu a:hover{color:var(--gold)}
+
+/*──────────────────────────────────────────────
+  HERO
+──────────────────────────────────────────────*/
+#hero{position:relative;height:100vh;min-height:600px;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(170deg,#2D3A2E,#1C2820 35%,#3A3020 65%,#1C1C1A)}
+.hero-bg-img{position:absolute;inset:0;background-size:cover;background-position:center 40%;opacity:.55;transition:transform .1s linear}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.1) 50%,rgba(0,0,0,.5))}
+.hero-cnt{position:relative;z-index:1;padding:0 24px}
+.hero-badge{display:inline-block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--borderG);padding:6px 20px;margin-bottom:32px}
+.hero-title{font-family:var(--serif);font-size:clamp(48px,8vw,96px);font-weight:300;
+  color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:20px}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-tag{font-size:clamp(13px,2vw,16px);letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(255,255,255,.65);margin-bottom:48px}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-pri{font-family:var(--sans);font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  padding:16px 36px;background:var(--gold);color:#fff;border:1px solid var(--gold);
+  cursor:pointer;text-decoration:none;transition:all var(--tr);display:inline-block}
+.btn-pri:hover{background:var(--goldD);border-color:var(--goldD)}
+.btn-out{font-family:var(--sans);font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  padding:16px 36px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45);
+  cursor:pointer;text-decoration:none;transition:all var(--tr);display:inline-block}
+.btn-out:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);
+  animation:sP 2s ease-in-out infinite}
+@keyframes sP{0%,100%{opacity:.4}50%{opacity:1}}
+
+/*──────────────────────────────────────────────
+  STATS BAR
+──────────────────────────────────────────────*/
+.stats-bar{background:var(--anth);padding:0 48px}
+.stats-inner{max-width:var(--maxW);margin:0 auto;display:flex;
+  justify-content:space-between;align-items:stretch;flex-wrap:wrap}
+.stat-it{display:flex;align-items:center;gap:10px;padding:22px 16px;
+  border-right:1px solid rgba(255,255,255,.08);flex:1;min-width:120px}
+.stat-it:last-child{border-right:none}
+.stat-ico{font-size:18px;color:var(--gold);flex-shrink:0}
+.stat-txt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.65);white-space:nowrap}
+
+/*──────────────────────────────────────────────
+  SECTION COMMONS
+──────────────────────────────────────────────*/
+section{padding:100px 48px}
+.sec-in{max-width:var(--maxW);margin:0 auto}
+.eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;display:block}
+.sec-title{font-family:var(--serif);font-size:clamp(32px,4vw,54px);
+  font-weight:300;line-height:1.15;color:var(--anth);margin-bottom:24px}
+.sec-title em{font-style:italic;color:var(--goldD)}
+.sec-lead{font-size:16px;color:var(--muted);line-height:1.8;max-width:560px}
+.gold-rule{width:48px;height:1px;background:var(--gold);margin:32px 0}
+
+/*──────────────────────────────────────────────
+  VISION
+──────────────────────────────────────────────*/
+#vision{background:var(--beigeL)}
+.vis-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:64px}
+.vis-img{aspect-ratio:4/5;position:relative;overflow:hidden}
+.vis-img img{width:100%;height:100%;object-fit:cover}
+.vis-img-lbl{position:absolute;bottom:24px;left:24px;font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.5);background:rgba(0,0,0,.4);
+  padding:6px 14px;backdrop-filter:blur(4px)}
+.vis-features{display:flex;flex-direction:column;gap:24px;margin-top:40px}
+.vis-feat{display:flex;gap:20px;align-items:flex-start}
+.feat-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;margin-top:8px;flex-shrink:0}
+.feat-txt h4{font-family:var(--serif);font-size:18px;font-weight:400;margin-bottom:4px}
+.feat-txt p{font-size:14px;color:var(--muted);line-height:1.6}
+
+/*──────────────────────────────────────────────
+  GALLERY
+──────────────────────────────────────────────*/
+#galerie{background:var(--ww)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:64px}
+.gal-it{position:relative;overflow:hidden;cursor:pointer;background:#2a3020}
+.gal-it:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:1}
+.gal-it:nth-child(2),.gal-it:nth-child(3),.gal-it:nth-child(4),.gal-it:nth-child(5){aspect-ratio:4/3}
+.gal-it:nth-child(6){grid-column:span 2;aspect-ratio:2/1}
+.gal-it:nth-child(7),.gal-it:nth-child(8){aspect-ratio:4/3}
+.gal-it img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.gal-it:hover img{transform:scale(1.04)}
+.gal-lbl{position:absolute;bottom:16px;left:16px;right:16px;
+  font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.7);z-index:1}
+.gal-ov{position:absolute;inset:0;background:rgba(28,28,26,0);
+  display:flex;align-items:center;justify-content:center;transition:background var(--tr);z-index:2}
+.gal-it:hover .gal-ov{background:rgba(28,28,26,.3)}
+.gal-ov-txt{font-family:var(--serif);font-size:18px;color:#fff;opacity:0;
+  transform:translateY(8px);transition:all var(--tr);text-align:center;padding:16px}
+.gal-it:hover .gal-ov-txt{opacity:1;transform:translateY(0)}
+
+/*──────────────────────────────────────────────
+  BOOKING CALENDAR
+──────────────────────────────────────────────*/
+#kalender{background:var(--beigeL)}
+.cal-wrap{margin-top:64px}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.cal-nav-btn{background:none;border:1px solid var(--border);color:var(--anth);
+  width:40px;height:40px;cursor:pointer;font-size:16px;transition:all var(--tr);
+  display:flex;align-items:center;justify-content:center}
+.cal-nav-btn:hover{border-color:var(--gold);color:var(--gold)}
+.cal-month-label{font-family:var(--serif);font-size:22px;font-weight:300}
+.cal-grid-months{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.cal-month{background:#fff;border:1px solid var(--border);padding:24px}
+.cal-month-title{font-family:var(--serif);font-size:18px;font-weight:400;
+  margin-bottom:16px;text-align:center;color:var(--anth)}
+.cal-days-header{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:8px}
+.cal-day-hdr{font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);text-align:center;padding:4px 0}
+.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  font-size:13px;cursor:default;position:relative;border-radius:2px;
+  transition:background var(--tr)}
+.cal-day.empty{background:transparent}
+.cal-day.avail{background:rgba(201,169,110,.08);color:var(--anth)}
+.cal-day.avail:hover{background:rgba(201,169,110,.2)}
+.cal-day.booked{background:rgba(180,60,50,.18);color:#b03030;
+  text-decoration:line-through;cursor:default;border:1px solid rgba(180,60,50,.2)}
+.cal-day.today{border:1px solid var(--gold);font-weight:500}
+.cal-day.past{color:var(--light);background:transparent}
+.cal-day.checkin{background:rgba(201,169,110,.35);border-radius:2px 0 0 2px}
+.cal-day.checkout{background:rgba(201,169,110,.35);border-radius:0 2px 2px 0}
+.cal-day[data-note]{cursor:pointer}
+.cal-day.booked::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:var(--goldD);border-radius:50%}
+.cal-tooltip{position:fixed;background:var(--anth);color:#fff;font-size:11px;padding:5px 12px;pointer-events:none;z-index:9000;border:1px solid var(--borderG);letter-spacing:.04em;display:none;white-space:nowrap}
+.cal-legend{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap}
+.cal-legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.cal-legend-dot{width:14px;height:14px;border-radius:2px}
+.cal-note{font-size:13px;color:var(--muted);margin-top:16px;font-style:italic}
+
+/*──────────────────────────────────────────────
+  ACTIVITIES
+──────────────────────────────────────────────*/
+#aktivitaeten{background:var(--ww)}
+.act-tabs{display:flex;gap:0;margin-top:48px;border-bottom:1px solid var(--border)}
+.act-tab{font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:14px 28px;background:none;border:none;cursor:pointer;color:var(--muted);
+  border-bottom:2px solid transparent;margin-bottom:-1px;transition:all var(--tr)}
+.act-tab.active,.act-tab:hover{color:var(--anth);border-bottom-color:var(--gold)}
+.act-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:48px}
+.act-card{background:#fff;padding:32px 28px;border:1px solid var(--border);transition:all var(--tr)}
+.act-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 8px 32px rgba(201,169,110,.12)}
+.act-ico{font-size:28px;margin-bottom:16px}
+.act-name{font-family:var(--serif);font-size:20px;font-weight:400;margin-bottom:8px}
+.act-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.tab-cnt{display:none}
+.tab-cnt.active{display:block}
+
+/*──────────────────────────────────────────────
+  PREISE
+──────────────────────────────────────────────*/
+#preise{background:var(--beigeL)}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
+.price-card{background:#fff;border:1px solid var(--border);padding:40px 32px;
+  position:relative;transition:all var(--tr)}
+.price-card:hover{border-color:var(--borderG);box-shadow:0 8px 40px rgba(201,169,110,.1)}
+.price-card.feat{border-color:var(--gold)}
+.price-card.feat::before{content:attr(data-label);position:absolute;top:-1px;
+  left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;
+  font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:5px 20px}
+.price-season{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.price-amt{font-family:var(--serif);font-size:48px;font-weight:300;color:var(--anth);line-height:1}
+.price-amt span{font-size:18px;color:var(--muted)}
+.price-per{font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:24px}
+.price-rule{width:32px;height:1px;background:var(--gold);margin-bottom:24px}
+.price-feats{list-style:none;display:flex;flex-direction:column;gap:10px}
+.price-feats li{font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start}
+.price-feats li::before{content:'—';color:var(--gold);flex-shrink:0}
+.price-extras{display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  margin-top:48px;padding:32px;background:var(--ww);border:1px solid var(--border)}
+.extra-it{display:flex;justify-content:space-between;align-items:center;
+  padding:12px 0;border-bottom:1px solid var(--border)}
+.extra-lbl{font-size:13px;color:var(--muted)}
+.extra-val{font-size:13px;font-weight:500}
+
+/*──────────────────────────────────────────────
+  BOOKING FORM
+──────────────────────────────────────────────*/
+#buchen{background:var(--anth)}
+#buchen .sec-title{color:#fff}
+#buchen .eyebrow{color:var(--gold)}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:64px}
+.book-form{display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-grp{display:flex;flex-direction:column;gap:6px}
+.form-lbl{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.form-inp,.form-sel,.form-ta{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  color:#fff;padding:14px 16px;font-family:var(--sans);font-size:14px;
+  outline:none;transition:border-color var(--tr);width:100%}
+.form-inp:focus,.form-sel:focus,.form-ta:focus{border-color:var(--gold)}
+.form-inp::placeholder,.form-ta::placeholder{color:rgba(255,255,255,.25)}
+.form-sel option{background:var(--anth);color:#fff}
+.form-ta{resize:vertical;min-height:100px}
+.btn-sub{font-family:var(--sans);font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  padding:18px 40px;background:var(--gold);color:#fff;border:none;cursor:pointer;
+  transition:background var(--tr);margin-top:8px;align-self:flex-start}
+.btn-sub:hover{background:var(--goldD)}
+.book-info{display:flex;flex-direction:column;gap:32px}
+.book-hl{padding:32px;border:1px solid rgba(255,255,255,.08);border-left:2px solid var(--gold)}
+.book-hl h4{font-family:var(--serif);font-size:22px;font-weight:300;color:#fff;margin-bottom:8px}
+.book-hl p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7}
+.contact-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.contact-btn{display:inline-flex;align-items:center;gap:8px;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;padding:12px 20px;
+  border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);
+  text-decoration:none;transition:all var(--tr)}
+.contact-btn:hover{border-color:var(--gold);color:var(--gold)}
+.contact-btn.wa:hover{border-color:#25D366;color:#25D366}
+
+/*──────────────────────────────────────────────
+  LOCATION
+──────────────────────────────────────────────*/
+#lage{background:var(--ww)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:64px;align-items:start}
+.loc-map{aspect-ratio:4/3;background:#2D4028;position:relative;overflow:hidden;border:0}
+.loc-map iframe{width:100%;height:100%;border:0;display:block}
+.distances{display:flex;flex-direction:column;gap:0;margin-top:32px}
+.dist-it{display:flex;justify-content:space-between;align-items:center;
+  padding:16px 0;border-bottom:1px solid var(--border)}
+.dist-it:first-child{border-top:1px solid var(--border)}
+.dist-nm{font-size:14px;display:flex;align-items:center;gap:10px}
+.dist-ico{color:var(--gold);font-size:16px}
+.dist-time{font-family:var(--serif);font-size:20px;font-weight:300;color:var(--goldD)}
+.map-cta{display:inline-flex;align-items:center;gap:10px;margin-top:32px;
+  font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  padding:14px 28px;border:1px solid var(--border);color:var(--anth);
+  text-decoration:none;transition:all var(--tr)}
+.map-cta:hover{border-color:var(--goldD);color:var(--goldD)}
+
+/*──────────────────────────────────────────────
+  MONTAFON WIDGET
+──────────────────────────────────────────────*/
+.mtf-widget{background:var(--anth)}
+.mtf-widget .sec-title{color:#fff}
+.mtf-widget .eyebrow{color:var(--gold)}
+.widget-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:48px}
+.w-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  padding:28px 24px;text-decoration:none;transition:all var(--tr);
+  display:flex;flex-direction:column;gap:12px}
+.w-card:hover{border-color:var(--gold);background:rgba(201,169,110,.07)}
+.w-card-ico{font-size:28px}
+.w-card-title{font-family:var(--serif);font-size:18px;font-weight:400;color:#fff}
+.w-card-desc{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.05em}
+
+/*──────────────────────────────────────────────
+  FAQ
+──────────────────────────────────────────────*/
+#faq{background:var(--beigeL)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:64px}
+.faq-it{border-bottom:1px solid var(--border);padding-bottom:24px}
+.faq-q{font-family:var(--serif);font-size:18px;font-weight:400;margin-bottom:10px;
+  cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.faq-q::after{content:'+';color:var(--gold);font-size:20px;flex-shrink:0;
+  font-family:var(--sans);transition:transform var(--tr)}
+.faq-it.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.7;display:none;margin-top:4px}
+.faq-it.open .faq-a{display:block}
+
+/*──────────────────────────────────────────────
+  FOOTER
+──────────────────────────────────────────────*/
+footer{background:var(--anth);padding:80px 48px 40px}
+.foot-in{max-width:var(--maxW);margin:0 auto}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;margin-bottom:64px}
+.foot-brand h3{font-family:var(--serif);font-size:28px;font-weight:300;color:#fff;margin-bottom:12px}
+.foot-brand p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;max-width:280px}
+.foot-tag{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--gold);margin-top:16px}
+.foot-col h4{font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);margin-bottom:20px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col ul li a{font-size:13px;color:rgba(255,255,255,.55);
+  text-decoration:none;transition:color var(--tr)}
+.foot-col ul li a:hover{color:var(--gold)}
+.foot-rule{height:1px;background:rgba(255,255,255,.08);margin-bottom:32px}
+.foot-btm{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot-copy{font-size:12px;color:rgba(255,255,255,.3)}
+
+/*──────────────────────────────────────────────
+  ANIMATIONS
+──────────────────────────────────────────────*/
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/*──────────────────────────────────────────────
+  ADMIN TRIGGER (invisible dot, bottom-right)
+──────────────────────────────────────────────*/
+#admin-dot{position:fixed;bottom:18px;right:18px;z-index:9998;
+  width:10px;height:10px;border-radius:50%;background:transparent;
+  border:none;cursor:pointer;opacity:.01;transition:opacity .2s}
+#admin-dot:hover{opacity:.2;background:var(--gold)}
+
+/*──────────────────────────────────────────────
+  ADMIN OVERLAY
+──────────────────────────────────────────────*/
+.adm-overlay{display:none;position:fixed;inset:0;z-index:10000;
+  background:rgba(0,0,0,.88);backdrop-filter:blur(10px);
+  overflow-y:auto;padding:40px 20px;align-items:flex-start;justify-content:center}
+.adm-overlay.open{display:flex}
+.adm-panel{background:#111;border:1px solid #2a2a2a;width:100%;max-width:860px;
+  font-family:var(--sans);color:#ddd;border-radius:2px}
+.adm-header{background:#161616;border-bottom:1px solid #2a2a2a;padding:20px 28px;
+  display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1}
+.adm-header h2{font-family:var(--serif);font-size:20px;font-weight:300;color:var(--gold)}
+.adm-close{background:none;border:1px solid #333;color:#666;
+  padding:7px 16px;cursor:pointer;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;transition:all .2s}
+.adm-close:hover{border-color:var(--gold);color:var(--gold)}
+.adm-login{padding:40px 28px;display:flex;flex-direction:column;gap:16px;max-width:380px}
+.adm-login h3{font-family:var(--serif);font-size:20px;font-weight:300;color:rgba(255,255,255,.8)}
+.adm-login p{font-size:13px;color:#555}
+.adm-inp{background:rgba(255,255,255,.04);border:1px solid #2a2a2a;color:#ddd;
+  padding:12px 16px;font-family:var(--sans);font-size:14px;outline:none;
+  width:100%;transition:border-color .2s}
+.adm-inp:focus{border-color:var(--gold)}
+.adm-inp::placeholder{color:rgba(255,255,255,.2)}
+.adm-btn{background:var(--gold);border:none;color:#fff;
+  padding:13px 28px;font-family:var(--sans);font-size:11px;
+  letter-spacing:.15em;text-transform:uppercase;cursor:pointer;
+  transition:background .2s;align-self:flex-start}
+.adm-btn:hover{background:var(--goldD)}
+.adm-err{color:#e05050;font-size:13px}
+/* tabs */
+.adm-body{display:none;flex-direction:column}
+.adm-body.vis{display:flex}
+.adm-tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid #222;
+  background:#141414;padding:0 28px}
+.adm-tab{background:none;border:none;color:#555;
+  padding:13px 16px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
+.adm-tab.on,.adm-tab:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.adm-sec{display:none;padding:28px;flex-direction:column;gap:0}
+.adm-sec.on{display:flex}
+/* fields */
+.af{margin-bottom:18px}
+.af label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  color:#555;margin-bottom:6px;display:block}
+.af input,.af textarea,.af select{background:rgba(255,255,255,.04);border:1px solid #252525;
+  color:#ccc;padding:10px 14px;font-family:var(--sans);font-size:13px;
+  outline:none;width:100%;transition:border-color .2s;border-radius:0}
+.af input:focus,.af textarea:focus,.af select:focus{border-color:var(--gold)}
+.af input::placeholder,.af textarea::placeholder{color:rgba(255,255,255,.18)}
+.af textarea{resize:vertical;min-height:70px}
+.af select option{background:#1a1a1a}
+.af-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.af-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.sec-h{font-family:var(--serif);font-size:15px;font-weight:400;
+  color:rgba(255,255,255,.5);margin:22px 0 14px;
+  border-bottom:1px solid #1e1e1e;padding-bottom:8px}
+.sec-h:first-child{margin-top:0}
+.adm-save{background:var(--gold);border:none;color:#fff;
+  padding:11px 28px;font-family:var(--sans);font-size:11px;
+  letter-spacing:.15em;text-transform:uppercase;cursor:pointer;
+  margin-top:18px;align-self:flex-start;transition:background .2s}
+.adm-save:hover{background:var(--goldD)}
+.adm-note{font-size:11px;color:#444;margin-top:6px;line-height:1.5}
+/* calendar admin */
+.cal-book-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.cal-book-entry{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px;align-items:center;
+  background:rgba(255,255,255,.03);border:1px solid #222;padding:12px 14px}
+.cal-book-entry input{background:rgba(255,255,255,.04);border:1px solid #252525;
+  color:#ccc;padding:8px 10px;font-family:var(--sans);font-size:12px;outline:none;width:100%}
+.cal-book-entry input:focus{border-color:var(--gold)}
+.cal-del-btn{background:none;border:1px solid #333;color:#666;
+  padding:6px 12px;cursor:pointer;font-size:12px;transition:all .2s;white-space:nowrap}
+.cal-del-btn:hover{border-color:#e05050;color:#e05050}
+.cal-add-btn{background:none;border:1px solid #333;color:#888;
+  padding:10px 20px;cursor:pointer;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;transition:all .2s;align-self:flex-start}
+.cal-add-btn:hover{border-color:var(--gold);color:var(--gold)}
+/* gallery admin grid */
+.gal-adm{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.gal-adm-thumb{aspect-ratio:1;background:#1a1a1a;border:1px solid #222;
+  overflow:hidden;position:relative}
+.gal-adm-thumb img{width:100%;height:100%;object-fit:cover;display:block;opacity:.6}
+.gal-adm-thumb span{position:absolute;bottom:4px;left:4px;right:4px;
+  font-size:9px;color:rgba(255,255,255,.4);text-align:center;letter-spacing:.05em}
+/* toast */
+.adm-toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:#fff;padding:11px 28px;font-size:12px;
+  letter-spacing:.1em;text-transform:uppercase;z-index:10001;
+  opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
+.adm-toast.show{opacity:1}
+/* widget link edit indicator */
+.w-link-wrap{position:relative}
+
+/*──────────────────────────────────────────────
+  RESPONSIVE
+──────────────────────────────────────────────*/
+@media(max-width:900px){
+  section{padding:72px 24px}
+  nav{padding:16px 24px}
+  nav.scrolled{padding:12px 24px}
+  .stats-bar{padding:0 24px}
+  .stat-it{padding:16px 12px;min-width:90px}
+  .stat-txt{font-size:10px}
+  .vis-grid,.loc-grid,.book-grid{grid-template-columns:1fr;gap:40px}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .gal-it:nth-child(1),.gal-it:nth-child(6){grid-column:span 2}
+  .price-grid{grid-template-columns:1fr;max-width:400px}
+  .faq-grid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr 1fr;gap:40px}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .price-extras{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .cal-grid-months{grid-template-columns:1fr}
+  .af-row,.af-3{grid-template-columns:1fr}
+  .adm-tabs{padding:0 14px}
+  .adm-tab{padding:11px 10px;font-size:10px}
+}
+@media(max-width:600px){
+  .hero-btns{flex-direction:column;align-items:center}
+  .gal-grid{grid-template-columns:1fr}
+  .gal-it:nth-child(1),.gal-it:nth-child(6){grid-column:span 1}
+  .stats-inner{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}
+  .foot-top{grid-template-columns:1fr;gap:32px}
+  .foot-btm{flex-direction:column;align-items:flex-start}
+  .cal-book-entry{grid-template-columns:1fr 1fr;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- ADMIN TRIGGER -->
+<button id="admin-dot" onclick="openAdmin()" title="Admin" aria-hidden="true"></button>
+
+<!-- ADMIN TOAST -->
+<div class="adm-toast" id="adminToast">Gespeichert ✓</div>
+
+<!-- ADMIN OVERLAY -->
+<div class="adm-overlay" id="adminOverlay">
+<div class="adm-panel">
+  <div class="adm-header">
+    <h2>⚙ Admin · Sonnenblick Montafon</h2>
+    <button class="adm-close" onclick="closeAdmin()">✕ Schließen</button>
+  </div>
+
+  <!-- LOGIN -->
+  <div class="adm-login" id="adminLogin">
+    <h3>Admin-Zugang</h3>
+    <p>Bitte Passwort eingeben</p>
+    <input type="password" class="adm-inp" id="adminPw" placeholder="Passwort …"
+           onkeydown="if(event.key==='Enter')checkPw()">
+    <button class="adm-btn" onclick="checkPw()">Anmelden →</button>
+    <div class="adm-err" id="adminErr" style="display:none">Falsches Passwort.</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="adm-body" id="adminBody">
+    <div class="adm-tabs">
+      <button class="adm-tab on" onclick="aTab('allg',this)">Allgemein</button>
+      <button class="adm-tab" onclick="aTab('hero',this)">Hero</button>
+      <button class="adm-tab" onclick="aTab('gal',this)">Galerie</button>
+      <button class="adm-tab" onclick="aTab('kal',this)">Kalender</button>
+      <button class="adm-tab" onclick="aTab('preis',this)">Preise</button>
+      <button class="adm-tab" onclick="aTab('links',this)">Links</button>
+      <button class="adm-tab" onclick="aTab('ktkt',this)">Kontakt</button>
+      <button class="adm-tab" onclick="aTab('texte',this)">Texte</button>
+      <button class="adm-tab" onclick="aTab('faq',this)">FAQ</button>
+      <button class="adm-tab" onclick="aTab('pw',this)">Passwort</button>
+    </div>
+
+    <!-- ── ALLGEMEIN ── -->
+    <div class="adm-sec on" id="asec-allg">
+      <div class="sec-h">Grunddaten</div>
+      <div class="af-row">
+        <div class="af"><label>Wohnungsname</label><input id="a-name" value="Sonnenblick Montafon"></div>
+        <div class="af"><label>Slogan / Tagline</label><input id="a-slogan" value="Ankommen. Durchatmen. Genießen."></div>
+      </div>
+      <div class="af-row">
+        <div class="af"><label>Adresse Zeile 1</label><input id="a-addr1" value="Mateinweg 8"></div>
+        <div class="af"><label>Adresse Zeile 2</label><input id="a-addr2" value="6781 Bartolomäberg, Vorarlberg"></div>
+      </div>
+      <div class="af-row">
+        <div class="af"><label>Check-in (ab)</label><input id="a-ci" value="14:00 Uhr"></div>
+        <div class="af"><label>Check-out (bis)</label><input id="a-co" value="10:00 Uhr"></div>
+      </div>
+      <div class="sec-h">Navigation / Badge</div>
+      <div class="af"><label>Hero-Badge Text</label><input id="a-badge" value="✦ Exklusive Ferienwohnung · Bartolomäberg · Montafon"></div>
+      <div class="af-row">
+        <div class="af"><label>Nav CTA Button Text</label><input id="a-navCta" value="Jetzt anfragen"></div>
+        <div class="af"><label>Seitentitel (Browser-Tab)</label><input id="a-pageTitle" value="Sonnenblick Montafon – Exklusive Ferienwohnung Bartolomäberg"></div>
+      </div>
+      <div class="sec-h">Stats-Leiste (unter Hero)</div>
+      <div class="af-3">
+        <div class="af"><label>Stat 1</label><input id="a-s1" value="4 Gäste"></div>
+        <div class="af"><label>Stat 2</label><input id="a-s2" value="2 Schlafzimmer"></div>
+        <div class="af"><label>Stat 3</label><input id="a-s3" value="1 Badezimmer"></div>
+        <div class="af"><label>Stat 4</label><input id="a-s4" value="50 m²"></div>
+        <div class="af"><label>Stat 5</label><input id="a-s5" value="Bergblick"></div>
+        <div class="af"><label>Stat 6</label><input id="a-s6" value="WLAN"></div>
+        <div class="af"><label>Stat 7</label><input id="a-s7" value="Parkplatz"></div>
+      </div>
+      <div class="sec-h">Footer</div>
+      <div class="af"><label>Footer Beschreibungstext</label>
+        <textarea id="a-footDesc">Exklusive Ferienwohnung in Bartolomäberg, Vorarlberg. Bergblick, alpine Eleganz, unvergessliche Momente.</textarea>
+      </div>
+      <button class="adm-save" onclick="saveAllg()">Speichern</button>
+    </div>
+
+    <!-- ── HERO ── -->
+    <div class="adm-sec" id="asec-hero">
+      <div class="sec-h">Hintergrundbild</div>
+      <div class="af"><label>Hero Bild URL (Unsplash oder eigene URL)</label>
+        <input id="a-heroBg" value="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80">
+        <div class="adm-note">Tipp: unsplash.com → Bild auswählen → rechtsklick → Bildadresse kopieren</div>
+      </div>
+      <div class="sec-h">Titel &amp; Texte</div>
+      <div class="af-row">
+        <div class="af"><label>Titel Zeile 1 (normal)</label><input id="a-h1" value="Sonnenblick"></div>
+        <div class="af"><label>Titel Zeile 2 (kursiv / gold)</label><input id="a-h2" value="Montafon"></div>
+      </div>
+      <div class="af"><label>Tagline unter Titel</label><input id="a-hTag" value="Ankommen. Durchatmen. Genießen."></div>
+      <div class="af-row">
+        <div class="af"><label>Button 1 Text (gold)</label><input id="a-hBtn1" value="Verfügbarkeit prüfen"></div>
+        <div class="af"><label>Button 2 Text (outline)</label><input id="a-hBtn2" value="Jetzt anfragen"></div>
+      </div>
+      <div class="sec-h">Vision-Sektion</div>
+      <div class="af"><label>Vision Bild URL</label>
+        <input id="a-visBg" value="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&q=80">
+      </div>
+      <div class="af-row">
+        <div class="af"><label>Vision Bild Bildunterschrift</label><input id="a-visCaption" value="Alpiner Stil trifft moderne Eleganz."></div>
+        <div class="af"><label>Vision Bild Label</label><input id="a-visLabel" value="Interieur · Alpine Modern"></div>
+      </div>
+      <button class="adm-save" onclick="saveHero()">Speichern</button>
+    </div>
+
+    <!-- ── GALERIE ── -->
+    <div class="adm-sec" id="asec-gal">
+      <div class="sec-h">Galeriebilder (8 Bilder)</div>
+      <div class="adm-note" style="margin-bottom:16px;">Bild-URLs eintragen. Funktioniert mit Unsplash, eigenen Fotos (Webserver-URL) oder jedem öffentlichen Bild-Link.</div>
+      <div class="gal-adm" id="galThumbGrid"></div>
+      <div id="galFields"></div>
+      <button class="adm-save" onclick="saveGal()">Speichern</button>
+    </div>
+
+    <!-- ── KALENDER ── -->
+    <div class="adm-sec" id="asec-kal">
+      <div class="sec-h">Gebuchte Zeiträume verwalten</div>
+      <div class="adm-note" style="margin-bottom:16px;">
+        Trage hier alle bereits gebuchten Zeiträume ein. Sie werden im Kalender auf der Seite rot/gesperrt angezeigt.
+      </div>
+      <div class="cal-book-list" id="calBookList"></div>
+      <button class="cal-add-btn" onclick="addBooking()">+ Buchung hinzufügen</button>
+      <div class="sec-h" style="margin-top:28px;">Kalender-Einstellungen</div>
+      <div class="af-row">
+        <div class="af"><label>Kalender-Titel</label><input id="a-calTitle" value="Verfügbarkeit"></div>
+        <div class="af"><label>Kalender-Untertitel</label><input id="a-calSub" value="Freie &amp; gebuchte Zeiträume"></div>
+      </div>
+      <div class="af"><label>Hinweistext unter Kalender</label>
+        <input id="a-calNote" value="Grau = verfügbar · Rot durchgestrichen = belegt. Anfragen per Kontaktformular.">
+      </div>
+      <button class="adm-save" onclick="saveKal()">Speichern</button>
+    </div>
+
+    <!-- ── PREISE ── -->
+    <div class="adm-sec" id="asec-preis">
+      <div class="sec-h">Nebensaison</div>
+      <div class="af-row">
+        <div class="af"><label>Bezeichnung</label><input id="a-p1n" value="Nebensaison · März–April, Nov."></div>
+        <div class="af"><label>Preis (z.B. € 90–110)</label><input id="a-p1p" value="€ 90–110"></div>
+      </div>
+      <div class="af"><label>Mindestaufenthalt</label><input id="a-p1m" value="3 Nächte"></div>
+      <div class="sec-h">Sommersaison</div>
+      <div class="af-row">
+        <div class="af"><label>Bezeichnung</label><input id="a-p2n" value="Sommersaison · Mai–Oktober"></div>
+        <div class="af"><label>Preis</label><input id="a-p2p" value="€ 110–130"></div>
+      </div>
+      <div class="af"><label>Mindestaufenthalt</label><input id="a-p2m" value="3 Nächte"></div>
+      <div class="sec-h">Wintersaison</div>
+      <div class="af-row">
+        <div class="af"><label>Bezeichnung</label><input id="a-p3n" value="Wintersaison · Dez.–Februar"></div>
+        <div class="af"><label>Preis</label><input id="a-p3p" value="€ 140–170"></div>
+      </div>
+      <div class="af"><label>Mindestaufenthalt</label><input id="a-p3m" value="5 Nächte"></div>
+      <div class="sec-h">Extrakosten &amp; Zeiten</div>
+      <div class="af-row">
+        <div class="af"><label>Endreinigung</label><input id="a-clean" value="€ 80"></div>
+        <div class="af"><label>Kurtaxe</label><input id="a-kur" value="€ 2,50 / Person/Nacht"></div>
+      </div>
+      <button class="adm-save" onclick="savePreis()">Speichern</button>
+    </div>
+
+    <!-- ── LINKS ── -->
+    <div class="adm-sec" id="asec-links">
+      <div class="sec-h">Navigation Links</div>
+      <div class="af-row">
+        <div class="af"><label>Nav: Vision (Anker)</label><input id="l-nav1" value="#vision"></div>
+        <div class="af"><label>Nav: Galerie (Anker)</label><input id="l-nav2" value="#galerie"></div>
+        <div class="af"><label>Nav: Aktivitäten (Anker)</label><input id="l-nav3" value="#aktivitaeten"></div>
+        <div class="af"><label>Nav: Lage (Anker)</label><input id="l-nav4" value="#lage"></div>
+        <div class="af"><label>Nav: Preise (Anker)</label><input id="l-nav5" value="#preise"></div>
+        <div class="af"><label>Nav: FAQ (Anker)</label><input id="l-nav6" value="#faq"></div>
+      </div>
+      <div class="sec-h">Live-Info Widget Links</div>
+      <div class="af-row">
+        <div class="af"><label>🌤 Wetter URL</label><input id="l-w1" value="https://www.bergfex.at/sommer/bartholomaeberg/wetter/"></div>
+        <div class="af"><label>🌤 Wetter Label</label><input id="l-w1t" value="bergfex.at →"></div>
+        <div class="af"><label>📷 Webcams URL</label><input id="l-w2" value="https://www.montafon.at/webcams"></div>
+        <div class="af"><label>📷 Webcams Label</label><input id="l-w2t" value="montafon.at →"></div>
+        <div class="af"><label>❄️ Schneehöhe URL</label><input id="l-w3" value="https://www.bergfex.at/montafon/schneebericht/"></div>
+        <div class="af"><label>❄️ Schneehöhe Label</label><input id="l-w3t" value="bergfex.at →"></div>
+        <div class="af"><label>🚡 Bergbahnen URL</label><input id="l-w4" value="https://www.silvretta.at/bergbahnen/betrieb"></div>
+        <div class="af"><label>🚡 Bergbahnen Label</label><input id="l-w4t" value="silvretta.at →"></div>
+        <div class="af"><label>🎉 Events URL</label><input id="l-w5" value="https://www.montafon.at/events"></div>
+        <div class="af"><label>🎉 Events Label</label><input id="l-w5t" value="montafon.at →"></div>
+      </div>
+      <div class="sec-h">Widget Karten Titel</div>
+      <div class="af-3">
+        <div class="af"><label>Karte 1 Titel</label><input id="l-wt1" value="Wetter"></div>
+        <div class="af"><label>Karte 2 Titel</label><input id="l-wt2" value="Webcams"></div>
+        <div class="af"><label>Karte 3 Titel</label><input id="l-wt3" value="Schneehöhe"></div>
+        <div class="af"><label>Karte 4 Titel</label><input id="l-wt4" value="Bergbahnen"></div>
+        <div class="af"><label>Karte 5 Titel</label><input id="l-wt5" value="Events"></div>
+      </div>
+      <div class="sec-h">Footer Links</div>
+      <div class="af-row">
+        <div class="af"><label>Impressum URL</label><input id="l-impr" value="#"></div>
+        <div class="af"><label>Datenschutz URL</label><input id="l-dsgvo" value="#"></div>
+        <div class="af"><label>AGB URL</label><input id="l-agb" value="#"></div>
+        <div class="af"><label>Buchungsbedingungen URL</label><input id="l-buchB" value="#"></div>
+      </div>
+      <button class="adm-save" onclick="saveLinks()">Speichern</button>
+    </div>
+
+    <!-- ── KONTAKT ── -->
+    <div class="adm-sec" id="asec-ktkt">
+      <div class="sec-h">Kontaktdaten</div>
+      <div class="af-row">
+        <div class="af"><label>E-Mail Adresse</label><input id="a-mail" value="info@sonnenblick-montafon.at"></div>
+        <div class="af"><label>Telefonnummer</label><input id="a-tel" value="+43XXXXXXXXX"></div>
+      </div>
+      <div class="af"><label>WhatsApp Nummer (nur Ziffern mit Ländervorwahl, z.B. 4366012345678)</label>
+        <input id="a-wa" value="43XXXXXXXXX">
+        <div class="adm-note">Keine +, Leerzeichen oder Sonderzeichen. Beispiel: 4366012345678</div>
+      </div>
+      <div class="sec-h">Google Maps</div>
+      <div class="af"><label>Route-Ziel (für "Route planen" Button)</label>
+        <input id="a-mapDest" value="Mateinweg+8,+6781+Bartolomäberg,+Vorarlberg,+Austria">
+        <div class="adm-note">Adresse URL-kodiert eingeben, z.B. Leerzeichen als + oder %20</div>
+      </div>
+      <div class="af"><label>Google Maps Einbettungs-URL (iframe src)</label>
+        <textarea id="a-mapEmbed" rows="3">https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5395.2!2d9.9063!3d47.1028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479c67d2a3c4a5e9%3A0x5b2cad9a8f0e4f0!2sBartolom%C3%A4berg!5e0!3m2!1sde!2sat!4v1700000000000!5m2!1sde!2sat</textarea>
+        <div class="adm-note">Google Maps → Teilen → Karte einbetten → &lt;iframe src="..."&gt; — nur die URL kopieren</div>
+      </div>
+      <div class="sec-h">Buchungsformular</div>
+      <div class="af"><label>Formular Beschreibungstext</label>
+        <textarea id="a-formDesc">Senden Sie uns Ihre Anfrage — wir melden uns persönlich innerhalb von 24 Stunden bei Ihnen.</textarea>
+      </div>
+      <div class="af"><label>Erfolgs-Meldung nach Absenden</label>
+        <input id="a-formOk" value="✓ Vielen Dank! Wir melden uns innerhalb von 24 Stunden.">
+      </div>
+      <button class="adm-save" onclick="saveKtkt()">Speichern</button>
+    </div>
+
+    <!-- ── TEXTE ── -->
+    <div class="adm-sec" id="asec-texte">
+      <div class="sec-h">Vision Sektion</div>
+      <div class="af"><label>Vision Eyebrow</label><input id="t-visEye" value="Das Projekt"></div>
+      <div class="af"><label>Vision Titel (HTML erlaubt)</label><textarea id="t-visTitle" rows="2">Eine Wohnung,<br><em>die Ihre Erwartungen</em><br>übertrifft</textarea></div>
+      <div class="af"><label>Vision Beschreibungstext</label><textarea id="t-visLead" rows="3">Auf dem sonnenzugewandten Sonnenberg in Bartolomäberg entsteht eine exklusive Ferienwohnung mit Panoramablick auf das Montafon. Sorgfältig geplant, hochwertig ausgestattet — für Gäste, die mehr erwarten.</textarea></div>
+      <div class="af"><label>Feature 1 Titel</label><input id="t-f1h" value="Sonnige Südlage am Sonnenberg"></div>
+      <div class="af"><label>Feature 1 Text</label><input id="t-f1p" value="Maximum Sonne, spektakulärer Bergblick, ruhige Umgebung fernab vom Trubel."></div>
+      <div class="af"><label>Feature 2 Titel</label><input id="t-f2h" value="Hochwertige alpine Ausstattung"></div>
+      <div class="af"><label>Feature 2 Text</label><input id="t-f2p" value="Warmes Holz, natürliche Materialien, modernes Design — alpine Gemütlichkeit trifft zeitlose Eleganz."></div>
+      <div class="af"><label>Feature 3 Titel</label><input id="t-f3h" value="Zentrale Lage im Montafon"></div>
+      <div class="af"><label>Feature 3 Text</label><input id="t-f3p" value="5–10 Minuten zu Skigebieten, Restaurants und dem Zentrum von Schruns."></div>
+      <div class="sec-h">Lage Sektion</div>
+      <div class="af"><label>Lage Beschreibungstext</label><textarea id="t-lageLead" rows="2">Bartolomäberg liegt auf dem sonnigen Sonnenberg hoch über dem Montafon-Tal — ruhig, zentral und ideal für Sommer- wie Winterurlaub.</textarea></div>
+      <div class="sec-h">Preise Sektion</div>
+      <div class="af"><label>Preise Untertitel</label><input id="t-preisLead" value="Direkt beim Eigentümer — ohne Vermittlungsgebühren."></div>
+      <div class="sec-h">Buchung Sidebar Texte</div>
+      <div class="af"><label>Direkt-Block Titel</label><input id="t-bk1h" value="Direkt beim Eigentümer"></div>
+      <div class="af"><label>Direkt-Block Text</label><textarea id="t-bk1p" rows="2">Keine Vermittlungsgebühren. Sie kommunizieren direkt mit dem Eigentümer — für den persönlichsten Service.</textarea></div>
+      <div class="af"><label>Rückmeldung-Block Titel</label><input id="t-bk2h" value="Schnelle Rückmeldung"></div>
+      <div class="af"><label>Rückmeldung-Block Text</label><textarea id="t-bk2p" rows="2">Ihre Anfrage wird innerhalb von 24 Stunden beantwortet. Für dringende Anfragen stehen wir auch per WhatsApp zur Verfügung.</textarea></div>
+      <button class="adm-save" onclick="saveTexte()">Speichern</button>
+    </div>
+
+    <!-- ── FAQ ── -->
+    <div class="adm-sec" id="asec-faq">
+      <div class="sec-h">FAQ Einträge</div>
+      <div id="faqAdmList"></div>
+      <button class="cal-add-btn" onclick="addFaq()">+ FAQ hinzufügen</button>
+      <button class="adm-save" onclick="saveFaq()">Speichern</button>
+    </div>
+
+    <!-- ── PASSWORT ── -->
+    <div class="adm-sec" id="asec-pw">
+      <div class="sec-h">GitHub Token (für Speichern)</div>
+      <div class="af">
+        <label>Personal Access Token (wird nur lokal gespeichert)</label>
+        <input type="password" id="a-ghtoken" placeholder="ghp_…">
+        <div class="adm-note">GitHub → Settings → Developer Settings → Personal Access Tokens → Token mit <strong>repo</strong>-Berechtigung. Wird nie hochgeladen, bleibt in deinem Browser.</div>
+      </div>
+      <button class="adm-save" onclick="saveGhToken()">Token speichern</button>
+      <div class="sec-h" style="margin-top:28px">Admin-Passwort ändern</div>
+      <div class="af"><label>Neues Passwort</label><input type="password" id="a-pw1" placeholder="Neues Passwort …"></div>
+      <div class="af"><label>Wiederholen</label><input type="password" id="a-pw2" placeholder="Wiederholen …"></div>
+      <button class="adm-save" onclick="savePw()">Passwort ändern</button>
+      <div class="adm-err" id="pwErr" style="display:none;margin-top:10px;"></div>
+    </div>
+
+  </div><!-- /adm-body -->
+</div><!-- /adm-panel -->
+</div><!-- /adm-overlay -->
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#vision" onclick="closeMob()">Vision</a>
+  <a href="#galerie" onclick="closeMob()">Galerie</a>
+  <a href="#aktivitaeten" onclick="closeMob()">Aktivitäten</a>
+  <a href="#kalender" onclick="closeMob()">Kalender</a>
+  <a href="#preise" onclick="closeMob()">Preise</a>
+  <a href="#lage" onclick="closeMob()">Lage</a>
+  <a href="#faq" onclick="closeMob()">FAQ</a>
+  <a href="#buchen" onclick="closeMob()">Anfragen</a>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo" id="nav-logo">Sonnenblick Montafon</a>
+  <ul class="nav-links">
+    <li><a href="#vision" id="nl-1">Vision</a></li>
+    <li><a href="#galerie" id="nl-2">Galerie</a></li>
+    <li><a href="#aktivitaeten" id="nl-3">Aktivitäten</a></li>
+    <li><a href="#kalender" id="nl-4">Kalender</a></li>
+    <li><a href="#preise" id="nl-5">Preise</a></li>
+    <li><a href="#faq" id="nl-6">FAQ</a></li>
+  </ul>
+  <a href="#buchen" class="nav-cta" id="nav-cta">Jetzt anfragen</a>
+  <div class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-img" id="heroBgImg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-cnt fade-in">
+    <div class="hero-badge" id="heroBadge">✦ Exklusive Ferienwohnung · Bartolomäberg · Montafon</div>
+    <h1 class="hero-title"><span id="heroL1">Sonnenblick</span><br><em id="heroL2">Montafon</em></h1>
+    <p class="hero-tag" id="heroTag">Ankommen. Durchatmen. Genießen.</p>
+    <div class="hero-btns">
+      <a href="#kalender" class="btn-pri" id="heroBtn1">Verfügbarkeit prüfen</a>
+      <a href="#buchen" class="btn-out" id="heroBtn2">Jetzt anfragen</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>Entdecken</span></div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-it"><span class="stat-ico">👥</span><span class="stat-txt" id="stat1">4 Gäste</span></div>
+    <div class="stat-it"><span class="stat-ico">🛏</span><span class="stat-txt" id="stat2">2 Schlafzimmer</span></div>
+    <div class="stat-it"><span class="stat-ico">🚿</span><span class="stat-txt" id="stat3">1 Badezimmer</span></div>
+    <div class="stat-it"><span class="stat-ico">📐</span><span class="stat-txt" id="stat4">50 m²</span></div>
+    <div class="stat-it"><span class="stat-ico">⛰</span><span class="stat-txt" id="stat5">Bergblick</span></div>
+    <div class="stat-it"><span class="stat-ico">📶</span><span class="stat-txt" id="stat6">WLAN</span></div>
+    <div class="stat-it"><span class="stat-ico">🚗</span><span class="stat-txt" id="stat7">Parkplatz</span></div>
+  </div>
+</div>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="sec-in">
+    <div class="vis-grid">
+      <div class="vis-img fade-in">
+        <img id="visImg" src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&q=80" alt="Alpine Ferienwohnung" loading="lazy">
+        <div class="vis-img-lbl" id="visLabel">Interieur · Alpine Modern</div>
+        <div style="position:absolute;bottom:54px;left:24px;right:24px;font-family:var(--serif);font-size:22px;font-weight:300;color:rgba(255,255,255,.85);line-height:1.3" id="visCaption">Alpiner Stil trifft moderne Eleganz.</div>
+      </div>
+      <div>
+        <span class="eyebrow fade-in" id="visEye">Das Projekt</span>
+        <h2 class="sec-title fade-in" id="visTitle">Eine Wohnung,<br><em>die Ihre Erwartungen</em><br>übertrifft</h2>
+        <div class="gold-rule fade-in"></div>
+        <p class="sec-lead fade-in" id="visLead">Auf dem sonnenzugewandten Sonnenberg in Bartolomäberg entsteht eine exklusive Ferienwohnung mit Panoramablick auf das Montafon. Sorgfältig geplant, hochwertig ausgestattet — für Gäste, die mehr erwarten.</p>
+        <div class="vis-features fade-in">
+          <div class="vis-feat"><div class="feat-dot"></div><div class="feat-txt"><h4 id="f1h">Sonnige Südlage am Sonnenberg</h4><p id="f1p">Maximum Sonne, spektakulärer Bergblick, ruhige Umgebung fernab vom Trubel.</p></div></div>
+          <div class="vis-feat"><div class="feat-dot"></div><div class="feat-txt"><h4 id="f2h">Hochwertige alpine Ausstattung</h4><p id="f2p">Warmes Holz, natürliche Materialien, modernes Design — alpine Gemütlichkeit trifft zeitlose Eleganz.</p></div></div>
+          <div class="vis-feat"><div class="feat-dot"></div><div class="feat-txt"><h4 id="f3h">Zentrale Lage im Montafon</h4><p id="f3p">5–10 Minuten zu Skigebieten, Restaurants und dem Zentrum von Schruns.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie">
+  <div class="sec-in">
+    <span class="eyebrow fade-in">Galerie</span>
+    <h2 class="sec-title fade-in">Berge, Natur<br><em>&amp; alpine Eleganz</em></h2>
+    <div class="gal-grid" id="galGrid">
+      <div class="gal-it fade-in"><img id="gi0" src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1000&q=80" alt="Bergpanorama" loading="lazy"><div class="gal-ov"><span class="gal-ov-txt">Bergpanorama</span></div><div class="gal-lbl" id="gl0">Montafon · Panorama</div></div>
+      <div class="gal-it fade-in"><img id="gi1" src="https://images.unsplash.com/photo-1595515106969-1ce829293e2f?w=800&q=80" alt="Wohnzimmer" loading="lazy"><div class="gal-ov"><span class="gal-ov-txt">Wohnzimmer</span></div><div class="gal-lbl" id="gl1">Wohnbereich · Concept</div></div>
+      <div class="gal-it fade-in"><img id="gi2" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Schlafzimmer" loading="lazy"><div class="gal-ov"><span class="gal-ov-txt">Schlafzimmer</span></div><div class="gal-lbl" id="gl2">Schlafzimmer · Concept</div></div>
+      <div class="gal-it fade-in"><img id="gi3" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Küche" loading="lazy"><div class="gal-ov"><span class="gal-ov-txt">Küche</span></div><div class="gal-lbl" id="gl3">Küche · Modern</div></div>
+      <div class="gal-it fade-in"><img id="gi4" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80" alt="Badezimmer" loading="lazy"><div class="gal-ov"><span class="gal-ov-txt">Badezimmer</span></div><div class="gal-lbl" id="gl4">Bad · Concept</div></div>
+      <div class="gal-it fade-in"><img id="gi5" src="https://images.unsplash.com/photo-1548919573-3fb5ceafbc32?w=1200&q=80" alt="Winter" loading="lazy"><div class="gal-ov"><span class="gal-ov-txt">Winterlandschaft</span></div><div class="gal-lbl" id="gl5">Montafon im Winter</div></div>
+      <div class="gal-it fade-in"><img id="gi6" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80" alt="Sommer" loading="lazy"><div class="gal-ov"><span class="gal-ov-txt">Sommerberge</span></div><div class="gal-lbl" id="gl6">Montafon im Sommer</div></div>
+      <div class="gal-it fade-in"><img id="gi7" src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80" alt="Bergblick" loading="lazy"><div class="gal-ov"><span class="gal-ov-txt">Bergblick</span></div><div class="gal-lbl" id="gl7">Terrasse &amp; Bergblick</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- KALENDER -->
+<section id="kalender">
+  <div class="sec-in">
+    <span class="eyebrow fade-in">Verfügbarkeit</span>
+    <h2 class="sec-title fade-in" id="calTitle">Verfügbarkeit<br><em>prüfen</em></h2>
+    <p class="sec-lead fade-in" id="calSub">Freie &amp; gebuchte Zeiträume auf einen Blick. Grüne Felder = verfügbar.</p>
+    <div class="cal-wrap fade-in">
+      <div class="cal-nav">
+        <button class="cal-nav-btn" onclick="calPrev()">&#8592;</button>
+        <span class="cal-month-label" id="calLabel"></span>
+        <button class="cal-nav-btn" onclick="calNext()">&#8594;</button>
+      </div>
+      <div class="cal-grid-months" id="calMonths"></div>
+      <div class="cal-legend">
+        <div class="cal-legend-item"><div class="cal-legend-dot" style="background:rgba(201,169,110,.15)"></div> Verfügbar</div>
+        <div class="cal-legend-item"><div class="cal-legend-dot" style="background:rgba(180,60,50,.25);border:1px solid rgba(180,60,50,.3)"></div> Belegt</div>
+        <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#fff;border:1px solid var(--gold)"></div> Heute</div>
+      </div>
+      <p class="cal-note" id="calNote">Anfragen per Kontaktformular oder WhatsApp.</p>
+    </div>
+  </div>
+</section>
+<div class="cal-tooltip" id="calTooltip"></div>
+
+<!-- AKTIVITÄTEN -->
+<section id="aktivitaeten">
+  <div class="sec-in">
+    <span class="eyebrow fade-in">Ihre Freizeit</span>
+    <h2 class="sec-title fade-in">Das Montafon —<br><em>Vier Jahreszeiten</em><br>voller Erlebnisse</h2>
+    <div class="act-tabs fade-in">
+      <button class="act-tab active" onclick="actTab('so',event)">☀️ Sommer</button>
+      <button class="act-tab" onclick="actTab('wi',event)">❄️ Winter</button>
+      <button class="act-tab" onclick="actTab('fa',event)">👨‍👩‍👧‍👦 Familie</button>
+    </div>
+    <div id="tab-so" class="tab-cnt active">
+      <div class="act-grid">
+        <div class="act-card fade-in"><div class="act-ico">🥾</div><div class="act-name">Wandern</div><div class="act-desc">Über 500 km markierte Wanderwege — von gemütlichen Talspaziergängen bis zu alpinen Gipfeltouren.</div></div>
+        <div class="act-card fade-in"><div class="act-ico">🚵</div><div class="act-name">Mountainbiken</div><div class="act-desc">Das Montafon ist eines der besten Bike-Reviere Österreichs — Trails für jedes Niveau.</div></div>
+        <div class="act-card fade-in"><div class="act-ico">🧗</div><div class="act-name">Klettern</div><div class="act-desc">Klettergärten und alpine Routen für Anfänger bis Experten in unmittelbarer Umgebung.</div></div>
+        <div class="act-card fade-in"><div class="act-ico">🏔</div><div class="act-name">Bergseen</div><div class="act-desc">Kristallklare Bergseen laden zum Schwimmen und Entspannen auf 1.800 Metern ein.</div></div>
+        <div class="act-card fade-in"><div class="act-ico">🪂</div><div class="act-name">Paragleiten</div><div class="act-desc">Mit professionellen Guides über das Montafon gleiten — unvergessliche Perspektiven.</div></div>
+      </div>
+    </div>
+    <div id="tab-wi" class="tab-cnt">
+      <div class="act-grid">
+        <div class="act-card fade-in"><div class="act-ico">⛷</div><div class="act-name">Skifahren</div><div class="act-desc">Silvretta Nova und Hochjoch — zwei Weltklasse-Skigebiete in wenigen Minuten erreichbar.</div></div>
+        <div class="act-card fade-in"><div class="act-ico">🏂</div><div class="act-name">Snowboarden</div><div class="act-desc">Bestens präparierte Pisten und Snowpark-Anlagen für alle Könnensstufen.</div></div>
+        <div class="act-card fade-in"><div class="act-ico">🎿</div><div class="act-name">Freeriden</div><div class="act-desc">Tiefschnee-Hänge und geführte Freeride-Touren in unberührten Bergregionen.</div></div>
+        <div class="act-card fade-in"><div class="act-ico">🎽</div><div class="act-name">Langlaufen</div><div class="act-desc">Perfekt gespurte Loipen durch verschneite Täler und winterliche Almlandschaften.</div></div>
+        <div class="act-card fade-in"><div class="act-ico">🛷</div><div class="act-name">Rodeln</div><div class="act-desc">Beleuchtete Rodelbahnen für unvergessliche Abende unter dem Sternenhimmel.</div></div>
+      </div>
+    </div>
+    <div id="tab-fa" class="tab-cnt">
+      <div class="act-grid">
+        <div class="act-card fade-in"><div class="act-ico">🌿</div><div class="act-name">Naturerlebnisse</div><div class="act-desc">Wildtierbeobachtung, Kräuterwanderungen und geführte Naturerlebnisse für die Familie.</div></div>
+        <div class="act-card fade-in"><div class="act-ico">🧭</div><div class="act-name">Erlebniswege</div><div class="act-desc">Thematische Wanderwege mit Erlebnisstationen — lehrreich und spannend für Groß und Klein.</div></div>
+        <div class="act-card fade-in"><div class="act-ico">🎒</div><div class="act-name">Ausflüge</div><div class="act-desc">Bregenz, Feldkirch, Arlberg — attraktive Tagesausflugsziele in der Region.</div></div>
+        <div class="act-card fade-in"><div class="act-ico">🎳</div><div class="act-name">Indoor Aktivitäten</div><div class="act-desc">Hallenbäder, Wellness-Center und Freizeitanlagen für Regentage in Schruns.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREISE -->
+<section id="preise">
+  <div class="sec-in">
+    <span class="eyebrow fade-in">Preise &amp; Saisons</span>
+    <h2 class="sec-title fade-in">Transparente<br><em>Preisgestaltung</em></h2>
+    <p class="sec-lead fade-in" id="preisLead">Direkt beim Eigentümer — ohne Vermittlungsgebühren.</p>
+    <div class="price-grid fade-in">
+      <div class="price-card">
+        <div class="price-season" id="p1n">Nebensaison · März–April, Nov.</div>
+        <div class="price-amt" id="p1p">€ 90<span>–110</span></div>
+        <div class="price-per">pro Nacht</div>
+        <div class="price-rule"></div>
+        <ul class="price-feats">
+          <li id="p1m">Mindestaufenthalt: 3 Nächte</li>
+          <li>Bergwandern im Frühling</li>
+          <li>Entspannte Atmosphäre</li>
+        </ul>
+      </div>
+      <div class="price-card feat" data-label="Empfehlung">
+        <div class="price-season" id="p2n">Sommersaison · Mai–Oktober</div>
+        <div class="price-amt" id="p2p">€ 110<span>–130</span></div>
+        <div class="price-per">pro Nacht</div>
+        <div class="price-rule"></div>
+        <ul class="price-feats">
+          <li id="p2m">Mindestaufenthalt: 3 Nächte</li>
+          <li>Wandern, Biken, Klettern</li>
+          <li>Volle Bergbahn-Saison</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-season" id="p3n">Wintersaison · Dez.–Februar</div>
+        <div class="price-amt" id="p3p">€ 140<span>–170</span></div>
+        <div class="price-per">pro Nacht</div>
+        <div class="price-rule"></div>
+        <ul class="price-feats">
+          <li id="p3m">Mindestaufenthalt: 5 Nächte</li>
+          <li>Ski, Snowboard, Freeride</li>
+          <li>Direkte Skigebietsnähe</li>
+        </ul>
+      </div>
+    </div>
+    <div class="price-extras fade-in">
+      <div class="extra-it"><span class="extra-lbl">Endreinigung</span><span class="extra-val" id="pClean">€ 80</span></div>
+      <div class="extra-it"><span class="extra-lbl">Kurtaxe</span><span class="extra-val" id="pKur">€ 2,50 / Person/Nacht</span></div>
+      <div class="extra-it"><span class="extra-lbl">Check-in</span><span class="extra-val" id="pCi">ab 14:00 Uhr</span></div>
+      <div class="extra-it"><span class="extra-lbl">Check-out</span><span class="extra-val" id="pCo">bis 10:00 Uhr</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUCHUNGSANFRAGE -->
+<section id="buchen">
+  <div class="sec-in">
+    <div class="book-grid">
+      <div>
+        <span class="eyebrow">Buchungsanfrage</span>
+        <h2 class="sec-title">Ihren Aufenthalt<br><em>anfragen</em></h2>
+        <p class="sec-lead" style="color:rgba(255,255,255,.55)" id="formDesc">Senden Sie uns Ihre Anfrage — wir melden uns persönlich innerhalb von 24 Stunden bei Ihnen.</p>
+        <form class="book-form" onsubmit="submitForm(event)" style="margin-top:32px">
+          <div class="form-row">
+            <div class="form-grp"><label class="form-lbl">Vorname *</label><input type="text" class="form-inp" placeholder="Max" required></div>
+            <div class="form-grp"><label class="form-lbl">Nachname *</label><input type="text" class="form-inp" placeholder="Mustermann" required></div>
+          </div>
+          <div class="form-grp"><label class="form-lbl">E-Mail *</label><input type="email" class="form-inp" placeholder="max@beispiel.at" required></div>
+          <div class="form-grp"><label class="form-lbl">Telefon</label><input type="tel" class="form-inp" placeholder="+43 ..."></div>
+          <div class="form-row">
+            <div class="form-grp"><label class="form-lbl">Anreise *</label><input type="date" class="form-inp" required></div>
+            <div class="form-grp"><label class="form-lbl">Abreise *</label><input type="date" class="form-inp" required></div>
+          </div>
+          <div class="form-grp">
+            <label class="form-lbl">Anzahl Gäste *</label>
+            <select class="form-sel" required>
+              <option value="">Bitte wählen</option>
+              <option>1 Person</option><option>2 Personen</option>
+              <option>3 Personen</option><option>4 Personen</option>
+            </select>
+          </div>
+          <div class="form-grp"><label class="form-lbl">Nachricht</label><textarea class="form-ta" placeholder="Ihre Fragen oder Wünsche …"></textarea></div>
+          <button type="submit" class="btn-sub">Anfrage senden →</button>
+          <p style="font-size:11px;color:rgba(255,255,255,.3);margin-top:10px;line-height:1.5">Beim Absenden öffnet sich Ihr E-Mail-Programm mit der vorausgefüllten Anfrage.</p>
+        </form>
+        <div id="formOk" style="display:none;margin-top:24px;padding:20px 24px;border:1px solid var(--gold);color:var(--gold);font-size:14px">
+          ✓ Vielen Dank! Wir melden uns innerhalb von 24 Stunden.
+        </div>
+      </div>
+      <div class="book-info">
+        <div class="book-hl"><h4 id="bk1h">Direkt beim Eigentümer</h4><p id="bk1p">Keine Vermittlungsgebühren. Sie kommunizieren direkt mit dem Eigentümer — für den persönlichsten Service.</p></div>
+        <div class="book-hl"><h4 id="bk2h">Schnelle Rückmeldung</h4><p id="bk2p">Ihre Anfrage wird innerhalb von 24 Stunden beantwortet. Für dringende Anfragen stehen wir auch per WhatsApp zur Verfügung.</p></div>
+        <div class="book-hl" id="kontakt">
+          <h4>Direkt Kontakt aufnehmen</h4>
+          <p id="contactAddr">Mateinweg 8 · 6781 Bartolomäberg · Vorarlberg</p>
+          <div class="contact-btns">
+            <a href="#" class="contact-btn wa" id="waLink">📱 WhatsApp</a>
+            <a href="#" class="contact-btn" id="telLink">📞 Telefon</a>
+            <a href="#" class="contact-btn" id="mailLink">✉ E-Mail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAGE -->
+<section id="lage">
+  <div class="sec-in">
+    <span class="eyebrow fade-in">Lage &amp; Anreise</span>
+    <h2 class="sec-title fade-in">Im Herzen des<br><em>Montafon</em></h2>
+    <div class="loc-grid">
+      <div>
+        <div class="loc-map fade-in">
+          <iframe id="mapIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5395.2!2d9.9063!3d47.1028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479c67d2a3c4a5e9%3A0x5b2cad9a8f0e4f0!2sBartolom%C3%A4berg!5e0!3m2!1sde!2sat!4v1700000000000!5m2!1sde!2sat" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <a href="#" class="map-cta fade-in" id="mapRouteBtn">🗺 Route planen →</a>
+      </div>
+      <div>
+        <p class="sec-lead fade-in" id="lageLead" style="margin-bottom:40px">Bartolomäberg liegt auf dem sonnigen Sonnenberg hoch über dem Montafon-Tal — ruhig, zentral und ideal für Sommer- wie Winterurlaub.</p>
+        <div class="distances fade-in">
+          <div class="dist-it"><span class="dist-nm"><span class="dist-ico">🏘</span>Schruns (Zentrum)</span><span class="dist-time">5–10 min</span></div>
+          <div class="dist-it"><span class="dist-nm"><span class="dist-ico">⛷</span>Skigebiete</span><span class="dist-time">5–10 min</span></div>
+          <div class="dist-it"><span class="dist-nm"><span class="dist-ico">🍽</span>Restaurants</span><span class="dist-time">~5 min</span></div>
+          <div class="dist-it"><span class="dist-nm"><span class="dist-ico">🚂</span>Bahnhof Schruns</span><span class="dist-time">~8 min</span></div>
+          <div class="dist-it"><span class="dist-nm"><span class="dist-ico">🛒</span>Supermarkt</span><span class="dist-time">~5 min</span></div>
+          <div class="dist-it"><span class="dist-nm"><span class="dist-ico">✈</span>Flughafen Zürich</span><span class="dist-time">~1,5 Std</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE WIDGET -->
+<section class="mtf-widget">
+  <div class="sec-in">
+    <span class="eyebrow">Live Information</span>
+    <h2 class="sec-title">Heute im<br><em>Montafon</em></h2>
+    <div class="widget-grid">
+      <a class="w-card" id="wc1" href="https://www.bergfex.at/sommer/bartholomaeberg/wetter/" target="_blank" rel="noopener">
+        <div class="w-card-ico">🌤</div><div class="w-card-title" id="wct1">Wetter</div><div class="w-card-desc" id="wcd1">bergfex.at →</div>
+      </a>
+      <a class="w-card" id="wc2" href="https://www.montafon.at/webcams" target="_blank" rel="noopener">
+        <div class="w-card-ico">📷</div><div class="w-card-title" id="wct2">Webcams</div><div class="w-card-desc" id="wcd2">montafon.at →</div>
+      </a>
+      <a class="w-card" id="wc3" href="https://www.bergfex.at/montafon/schneebericht/" target="_blank" rel="noopener">
+        <div class="w-card-ico">❄️</div><div class="w-card-title" id="wct3">Schneehöhe</div><div class="w-card-desc" id="wcd3">bergfex.at →</div>
+      </a>
+      <a class="w-card" id="wc4" href="https://www.silvretta.at/bergbahnen/betrieb" target="_blank" rel="noopener">
+        <div class="w-card-ico">🚡</div><div class="w-card-title" id="wct4">Bergbahnen</div><div class="w-card-desc" id="wcd4">silvretta.at →</div>
+      </a>
+      <a class="w-card" id="wc5" href="https://www.montafon.at/events" target="_blank" rel="noopener">
+        <div class="w-card-ico">🎉</div><div class="w-card-title" id="wct5">Events</div><div class="w-card-desc" id="wcd5">montafon.at →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="sec-in">
+    <span class="eyebrow fade-in">FAQ</span>
+    <h2 class="sec-title fade-in">Häufig gestellte<br><em>Fragen</em></h2>
+    <div class="faq-grid fade-in" id="faqGrid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-in">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <h3 id="footName">Sonnenblick Montafon</h3>
+        <p id="footDesc">Exklusive Ferienwohnung in Bartolomäberg, Vorarlberg. Bergblick, alpine Eleganz, unvergessliche Momente.</p>
+        <div class="foot-tag" id="footTag">Ankommen. Durchatmen. Genießen.</div>
+      </div>
+      <div class="foot-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#aktivitaeten">Aktivitäten</a></li>
+          <li><a href="#kalender">Kalender</a></li>
+          <li><a href="#preise">Preise</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="#" id="fMailLink">E-Mail</a></li>
+          <li><a href="#" id="fTelLink">Telefon</a></li>
+          <li><a href="#" id="fWaLink">WhatsApp</a></li>
+          <li><a href="#" id="fMapLink" target="_blank">Route planen</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="#" id="fImpr">Impressum</a></li>
+          <li><a href="#" id="fDsgvo">Datenschutz</a></li>
+          <li><a href="#" id="fAgb">AGB</a></li>
+          <li><a href="#" id="fBuchB">Buchungsbedingungen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-rule"></div>
+    <div class="foot-btm">
+      <span class="foot-copy" id="footCopy">© 2025 Sonnenblick Montafon · Mateinweg 8 · 6781 Bartolomäberg · Vorarlberg, Österreich</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══════════════════════════════════════════
+   DATA STORE
+══════════════════════════════════════════ */
+const DEF = {
+  name:'Sonnenblick Montafon',slogan:'Ankommen. Durchatmen. Genießen.',
+  addr1:'Mateinweg 8',addr2:'6781 Bartolomäberg, Vorarlberg',
+  ci:'14:00 Uhr',co:'10:00 Uhr',
+  badge:'✦ Exklusive Ferienwohnung · Bartolomäberg · Montafon',
+  navCta:'Jetzt anfragen',
+  pageTitle:'Sonnenblick Montafon – Exklusive Ferienwohnung Bartolomäberg',
+  s1:'4 Gäste',s2:'2 Schlafzimmer',s3:'1 Badezimmer',
+  s4:'50 m²',s5:'Bergblick',s6:'WLAN',s7:'Parkplatz',
+  footDesc:'Exklusive Ferienwohnung in Bartolomäberg, Vorarlberg. Bergblick, alpine Eleganz, unvergessliche Momente.',
+  heroBg:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80',
+  h1:'Sonnenblick',h2:'Montafon',
+  hTag:'Ankommen. Durchatmen. Genießen.',
+  hBtn1:'Verfügbarkeit prüfen',hBtn2:'Jetzt anfragen',
+  visBg:'https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&q=80',
+  visCaption:'Alpiner Stil trifft moderne Eleganz.',visLabel:'Interieur · Alpine Modern',
+  gUrls:[
+    'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1000&q=80',
+    'https://images.unsplash.com/photo-1595515106969-1ce829293e2f?w=800&q=80',
+    'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
+    'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
+    'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80',
+    'https://images.unsplash.com/photo-1548919573-3fb5ceafbc32?w=1200&q=80',
+    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
+    'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80'
+  ],
+  gLabels:['Montafon · Panorama','Wohnbereich · Concept','Schlafzimmer · Concept',
+    'Küche · Modern','Bad · Concept','Montafon im Winter','Montafon im Sommer','Terrasse & Bergblick'],
+  calTitle:'Verfügbarkeit',calSub:'Freie &amp; gebuchte Zeiträume auf einen Blick.',
+  calNote:'Anfragen per Kontaktformular oder WhatsApp.',
+  bookings:[],
+  p1n:'Nebensaison · März–April, Nov.',p1p:'€ 90–110',p1m:'3 Nächte',
+  p2n:'Sommersaison · Mai–Oktober',p2p:'€ 110–130',p2m:'3 Nächte',
+  p3n:'Wintersaison · Dez.–Februar',p3p:'€ 140–170',p3m:'5 Nächte',
+  clean:'€ 80',kur:'€ 2,50 / Person/Nacht',
+  lNav1:'#vision',lNav2:'#galerie',lNav3:'#aktivitaeten',lNav4:'#lage',lNav5:'#preise',lNav6:'#faq',
+  lW1:'https://www.bergfex.at/sommer/bartholomaeberg/wetter/',lW1t:'bergfex.at →',
+  lW2:'https://www.montafon.at/webcams',lW2t:'montafon.at →',
+  lW3:'https://www.bergfex.at/montafon/schneebericht/',lW3t:'bergfex.at →',
+  lW4:'https://www.silvretta.at/bergbahnen/betrieb',lW4t:'silvretta.at →',
+  lW5:'https://www.montafon.at/events',lW5t:'montafon.at →',
+  lWt1:'Wetter',lWt2:'Webcams',lWt3:'Schneehöhe',lWt4:'Bergbahnen',lWt5:'Events',
+  lImpr:'#',lDsgvo:'#',lAgb:'#',lBuchB:'#',
+  mail:'info@sonnenblick-montafon.at',tel:'+43XXXXXXXXX',wa:'43XXXXXXXXX',
+  mapDest:'Mateinweg+8,+6781+Bartolomäberg,+Vorarlberg,+Austria',
+  mapEmbed:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5395.2!2d9.9063!3d47.1028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479c67d2a3c4a5e9%3A0x5b2cad9a8f0e4f0!2sBartolom%C3%A4berg!5e0!3m2!1sde!2sat!4v1700000000000!5m2!1sde!2sat',
+  formDesc:'Senden Sie uns Ihre Anfrage — wir melden uns persönlich innerhalb von 24 Stunden.',
+  formOk:'✓ Vielen Dank! Wir melden uns innerhalb von 24 Stunden.',
+  visEye:'Das Projekt',
+  visTitle:'Eine Wohnung,<br><em>die Ihre Erwartungen</em><br>übertrifft',
+  visLead:'Auf dem sonnenzugewandten Sonnenberg in Bartolomäberg entsteht eine exklusive Ferienwohnung mit Panoramablick auf das Montafon. Sorgfältig geplant, hochwertig ausgestattet — für Gäste, die mehr erwarten.',
+  f1h:'Sonnige Südlage am Sonnenberg',f1p:'Maximum Sonne, spektakulärer Bergblick, ruhige Umgebung fernab vom Trubel.',
+  f2h:'Hochwertige alpine Ausstattung',f2p:'Warmes Holz, natürliche Materialien, modernes Design — alpine Gemütlichkeit trifft zeitlose Eleganz.',
+  f3h:'Zentrale Lage im Montafon',f3p:'5–10 Minuten zu Skigebieten, Restaurants und dem Zentrum von Schruns.',
+  lageLead:'Bartolomäberg liegt auf dem sonnigen Sonnenberg hoch über dem Montafon-Tal — ruhig, zentral und ideal für Sommer- wie Winterurlaub.',
+  preisLead:'Direkt beim Eigentümer — ohne Vermittlungsgebühren.',
+  bk1h:'Direkt beim Eigentümer',bk1p:'Keine Vermittlungsgebühren. Sie kommunizieren direkt mit dem Eigentümer — für den persönlichsten Service.',
+  bk2h:'Schnelle Rückmeldung',bk2p:'Ihre Anfrage wird innerhalb von 24 Stunden beantwortet. Für dringende Anfragen stehen wir auch per WhatsApp zur Verfügung.',
+  faq:[
+    {q:'Wie läuft die Buchung ab?',a:'Sie senden uns eine Anfrage mit Ihren Wunschdaten. Wir bestätigen die Verfügbarkeit persönlich und senden Ihnen alle weiteren Informationen zu. Direktbuchung ohne Provision.'},
+    {q:'Wie weit sind die Skigebiete entfernt?',a:'Die nächsten Skigebiete (Montafon Silvretta Nova, Hochjoch) sind in nur 5–10 Autofahrtminuten erreichbar. Ein eigenes Auto wird empfohlen.'},
+    {q:'Ist die Wohnung für Familien geeignet?',a:'Ja, die Wohnung bietet Platz für bis zu 4 Personen in 2 Schlafzimmern. Die Region bietet zahlreiche Familienaktivitäten für alle Altersgruppen.'},
+    {q:'Gibt es Parkplätze?',a:'Ja, ein kostenloser Parkplatz direkt bei der Unterkunft ist inklusive.'},
+    {q:'Was ist in der Endreinigung enthalten?',a:'Die Endreinigungspauschale deckt die vollständige Reinigung ab. Handtücher und Bettwäsche sind inklusive.'},
+    {q:'Sind Haustiere erlaubt?',a:'Leider nein — die Wohnung ist eine Nichtraucher- und haustierfreie Unterkunft.'},
+    {q:'Wie ist der Check-in geregelt?',a:'Check-in ist ab 14:00 Uhr, Check-out bis 10:00 Uhr. Flexiblere Zeiten nach Absprache möglich.'},
+    {q:'Welche Zahlungsmethoden werden akzeptiert?',a:'Wir akzeptieren Überweisung sowie gängige Zahlungsmethoden. Details werden bei der Buchungsbestätigung mitgeteilt.'}
+  ],
+  adminPw:'mischl'
+};
+
+/* ══════════════════════════════════════════
+   GITHUB API CONFIG
+══════════════════════════════════════════ */
+const GH_OWNER = 'mariotaumberger-sys';
+const GH_REPO  = 'SonnenblickMontafon';
+const GH_FILE  = 'data.json';
+const GH_API   = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}`;
+
+function ghToken(){return localStorage.getItem('gh_token')||''}
+function setGhToken(t){localStorage.setItem('gh_token',t.trim())}
+
+/* ── Local cache: always merge DEF → github data → local overrides ── */
+function D(){
+  try{return Object.assign({},DEF,JSON.parse(localStorage.getItem('sb2')||'{}'))}
+  catch(e){return Object.assign({},DEF)}
+}
+function SD(p){
+  const d=D();Object.assign(d,p);
+  localStorage.setItem('sb2',JSON.stringify(d));
+}
+
+/* ── Load data from GitHub (called on page init) ── */
+async function loadFromGitHub(){
+  try{
+    const res=await fetch(GH_API+'?t='+Date.now(),{
+      headers:{'Accept':'application/vnd.github.v3+json'}
+    });
+    if(!res.ok)return; // no data.json yet → use defaults
+    const json=await res.json();
+    const raw=atob(json.content.replace(/\n/g,''));const content=JSON.parse(decodeURIComponent(raw.split('').map(c=>'%'+('00'+c.charCodeAt(0).toString(16)).slice(-2)).join('')));
+    // Merge into local: github is source of truth
+    localStorage.setItem('sb2',JSON.stringify(Object.assign({},D(),content)));
+    apply();
+  }catch(e){console.warn('GitHub load failed, using local data',e);}
+}
+
+/* ── Save data to GitHub ── */
+async function saveToGitHub(){
+  const token=ghToken();
+  if(!token){
+    showGhTokenPrompt();
+    return false;
+  }
+  const d=D();
+  // Don't store the token in the JSON
+  const toSave=Object.assign({},d);
+  delete toSave.gh_token;
+
+  // Get current SHA (needed for update)
+  let sha='';
+  try{
+    const check=await fetch(GH_API,{
+      headers:{
+        'Authorization':'token '+token,
+        'Accept':'application/vnd.github.v3+json'
+      }
+    });
+    if(check.ok){const j=await check.json();sha=j.sha||'';}
+  }catch(e){}
+
+  const body={
+    message:'Admin update – Sonnenblick Montafon',
+    content:btoa(encodeURIComponent(JSON.stringify(toSave,null,2)).replace(/%([0-9A-F]{2})/g,(_,p)=>String.fromCharCode('0x'+p))),
+    branch:'main'
+  };
+  if(sha)body.sha=sha;
+
+  try{
+    const res=await fetch(GH_API,{
+      method:'PUT',
+      headers:{
+        'Authorization':'token '+token,
+        'Accept':'application/vnd.github.v3+json',
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify(body)
+    });
+    if(res.ok){return true;}
+    else{
+      const err=await res.json();
+      if(res.status===401||res.status===403){
+        localStorage.removeItem('gh_token');
+        showGhTokenPrompt('Token ungültig oder abgelaufen. Bitte neuen Token eingeben:');
+      } else {
+        alert('GitHub Fehler: '+(err.message||res.status));
+      }
+      return false;
+    }
+  }catch(e){
+    alert('Netzwerkfehler beim Speichern auf GitHub.');
+    return false;
+  }
+}
+
+/* ── Token prompt (shown when no token stored) ── */
+function showGhTokenPrompt(msg){
+  const existing=g('ghTokenModal');
+  if(existing)existing.remove();
+  const m=document.createElement('div');
+  m.id='ghTokenModal';
+  m.style.cssText='position:fixed;inset:0;z-index:20000;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:20px';
+  m.innerHTML=`
+    <div style="background:#111;border:1px solid #2a2a2a;max-width:480px;width:100%;padding:36px;font-family:var(--sans)">
+      <div style="font-family:var(--serif);font-size:20px;color:var(--gold);margin-bottom:8px">🔑 GitHub Token</div>
+      <p style="font-size:13px;color:#777;margin-bottom:20px;line-height:1.6">${msg||'Gib deinen GitHub Personal Access Token ein, damit Änderungen im Admin gespeichert werden können.'}<br><br>
+      <span style="color:#555;font-size:11px">Token wird nur lokal in deinem Browser gespeichert und nie übertragen.</span></p>
+      <input id="ghTokenInp" type="password" placeholder="ghp_…" style="width:100%;background:rgba(255,255,255,.05);border:1px solid #333;color:#ccc;padding:12px 14px;font-size:14px;outline:none;margin-bottom:14px">
+      <div style="display:flex;gap:10px">
+        <button onclick="confirmGhToken()" style="background:var(--gold);border:none;color:#fff;padding:11px 24px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer">Speichern →</button>
+        <button onclick="this.closest('#ghTokenModal').remove()" style="background:none;border:1px solid #333;color:#666;padding:11px 20px;font-size:11px;cursor:pointer">Abbrechen</button>
+      </div>
+    </div>`;
+  document.body.appendChild(m);
+  setTimeout(()=>{const inp=g('ghTokenInp');if(inp)inp.focus();},100);
+}
+
+function confirmGhToken(){
+  const t=g('ghTokenInp')?.value?.trim();
+  if(!t)return;
+  setGhToken(t);
+  g('ghTokenModal')?.remove();
+  toast('Token gespeichert ✓ — bitte nochmal speichern');
+}
+
+/* ── Wrap all save functions to also push to GitHub ── */
+async function ghSave(localSaveFn){
+  localSaveFn();
+  const el=g('adminToast');
+  if(el){el.textContent='Speichere auf GitHub…';el.classList.add('show');}
+  const ok=await saveToGitHub();
+  if(ok){toast('Auf GitHub gespeichert ✓');}
+}
+
+function g(id){return document.getElementById(id)}
+function st(id,v){const e=g(id);if(e&&v!==undefined)e.textContent=v}
+function sh(id,v){const e=g(id);if(e&&v!==undefined)e.innerHTML=v}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function v(id){const e=g(id);return e?e.value:''}
+
+/* ══════════════════════════════════════════
+   APPLY DATA TO PAGE
+══════════════════════════════════════════ */
+function apply(){
+  const d=D();
+  // Title
+  document.title=d.pageTitle||DEF.pageTitle;
+  // Nav
+  st('nav-logo',d.name);
+  const nc=g('nav-cta');if(nc)nc.textContent=d.navCta;
+  // Nav links
+  const nlHrefs=['lNav1','lNav2','lNav3','lNav4','lNav5','lNav6'];
+  nlHrefs.forEach((k,i)=>{const el=g('nl-'+(i+1));if(el)el.href=d[k]||DEF[k]});
+  // Hero
+  const bg=g('heroBgImg');
+  if(bg)bg.style.backgroundImage=d.heroBg?`url('${d.heroBg}')`:'none';
+  st('heroBadge',d.badge);
+  st('heroL1',d.h1);st('heroL2',d.h2);
+  st('heroTag',d.hTag);
+  st('heroBtn1',d.hBtn1);st('heroBtn2',d.hBtn2);
+  // Stats
+  for(let i=1;i<=7;i++)st('stat'+i,d['s'+i]);
+  // Vision
+  const vi=g('visImg');if(vi&&d.visBg)vi.src=d.visBg;
+  st('visCaption',d.visCaption);st('visLabel',d.visLabel);
+  // Gallery
+  (d.gUrls||DEF.gUrls).forEach((u,i)=>{
+    const img=g('gi'+i);if(img&&u)img.src=u;
+    const lbl=g('gl'+i);if(lbl&&d.gLabels&&d.gLabels[i])lbl.textContent=d.gLabels[i];
+  });
+  // Calendar
+  st('calTitle','');sh('calTitle',(d.calTitle||'Verfügbarkeit')+'<br><em>'+(d.calSub||'prüfen')+'</em>');
+  st('calNote',d.calNote);
+  // Prices
+  st('p1n',d.p1n);st('p2n',d.p2n);st('p3n',d.p3n);
+  setPriceEl('p1p',d.p1p);setPriceEl('p2p',d.p2p);setPriceEl('p3p',d.p3p);
+  st('p1m','Mindestaufenthalt: '+(d.p1m||'3 Nächte').replace('Mindestaufenthalt: ',''));
+  st('p2m','Mindestaufenthalt: '+(d.p2m||'3 Nächte').replace('Mindestaufenthalt: ',''));
+  st('p3m','Mindestaufenthalt: '+(d.p3m||'5 Nächte').replace('Mindestaufenthalt: ',''));
+  st('pClean',d.clean);st('pKur',d.kur);
+  st('pCi','ab '+d.ci);st('pCo','bis '+d.co);
+  // Contact
+  const wa=g('waLink');if(wa)wa.href='https://wa.me/'+d.wa;
+  const tel=g('telLink');if(tel)tel.href='tel:'+d.tel;
+  const ml=g('mailLink');if(ml)ml.href='mailto:'+d.mail;
+  st('contactAddr',d.addr1+' · '+d.addr2);
+  st('formDesc',d.formDesc);
+  // Map
+  const mi=g('mapIframe');if(mi&&d.mapEmbed)mi.src=d.mapEmbed;
+  const rb=g('mapRouteBtn');if(rb)rb.href='https://www.google.com/maps/dir/?api=1&destination='+d.mapDest;
+  // Widget links
+  for(let i=1;i<=5;i++){
+    const wc=g('wc'+i);if(wc)wc.href=d['lW'+i]||DEF['lW'+i];
+    st('wct'+i,d['lWt'+i]);st('wcd'+i,d['lW'+i+'t']);
+  }
+  // Footer
+  st('footName',d.name);st('footDesc',d.footDesc);st('footTag',d.slogan);
+  const fm=g('fMailLink');if(fm)fm.href='mailto:'+d.mail;
+  const ft=g('fTelLink');if(ft)ft.href='tel:'+d.tel;
+  const fw=g('fWaLink');if(fw)fw.href='https://wa.me/'+d.wa;
+  const fmap=g('fMapLink');if(fmap)fmap.href='https://www.google.com/maps/dir/?api=1&destination='+d.mapDest;
+  const fi=g('fImpr');if(fi)fi.href=d.lImpr;
+  const fd=g('fDsgvo');if(fd)fd.href=d.lDsgvo;
+  const fa=g('fAgb');if(fa)fa.href=d.lAgb;
+  const fb=g('fBuchB');if(fb)fb.href=d.lBuchB;
+  st('footCopy','© 2025 '+d.name+' · '+d.addr1+' · '+d.addr2.replace(', ',', '));
+  // FAQ
+  renderFaq();
+  // Calendar render
+  renderCal();
+  // Texte
+  st('visEye',d.visEye);
+  sh('visTitle',d.visTitle);
+  st('visLead',d.visLead);
+  st('f1h',d.f1h);st('f1p',d.f1p);
+  st('f2h',d.f2h);st('f2p',d.f2p);
+  st('f3h',d.f3h);st('f3p',d.f3p);
+  st('lageLead',d.lageLead);
+  st('preisLead',d.preisLead);
+  st('bk1h',d.bk1h);st('bk1p',d.bk1p);
+  st('bk2h',d.bk2h);st('bk2p',d.bk2p);
+}
+
+function setPriceEl(id,val){
+  const el=g(id);if(!el||!val)return;
+  const parts=val.replace('€','').trim().split('–');
+  if(parts.length===2)el.innerHTML='€ '+parts[0].trim()+'<span>–'+parts[1].trim()+'</span>';
+  else el.textContent=val;
+}
+
+/* ══════════════════════════════════════════
+   CALENDAR
+══════════════════════════════════════════ */
+const MONTHS=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+const DAYS=['Mo','Di','Mi','Do','Fr','Sa','So'];
+let calOffset=0;
+
+function isBooked(year,month,day){
+  const d=D();
+  const ts=new Date(year,month,day).getTime();
+  return (d.bookings||[]).some(b=>{
+    if(!b.from||!b.to)return false;
+    const f=new Date(b.from).getTime();
+    const t=new Date(b.to).getTime();
+    return ts>=f&&ts<=t;
+  });
+}
+
+function getBookingNote(year,month,day){
+  const d=D();
+  const ts=new Date(year,month,day).getTime();
+  const found=(d.bookings||[]).find(b=>{
+    if(!b.from||!b.to)return false;
+    return ts>=new Date(b.from).getTime()&&ts<=new Date(b.to).getTime();
+  });
+  return found?found.note||'Belegt':'';
+}
+
+function renderMonthCal(year,month){
+  const today=new Date();
+  const firstDay=new Date(year,month,1).getDay();
+  const offset=(firstDay+6)%7; // Mon=0
+  const daysInMonth=new Date(year,month+1,0).getDate();
+  let html=`<div class="cal-month"><div class="cal-month-title">${MONTHS[month]} ${year}</div>`;
+  html+='<div class="cal-days-header">'+DAYS.map(d=>`<div class="cal-day-hdr">${d}</div>`).join('')+'</div>';
+  html+='<div class="cal-days">';
+  for(let i=0;i<offset;i++)html+='<div class="cal-day empty"></div>';
+  for(let day=1;day<=daysInMonth;day++){
+    const isToday=today.getFullYear()===year&&today.getMonth()===month&&today.getDate()===day;
+    const isPast=new Date(year,month,day)<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    const booked=isBooked(year,month,day);
+    const note=booked?getBookingNote(year,month,day):'';
+    let cls='cal-day';
+    if(isPast)cls+=' past';
+    else if(booked)cls+=' booked';
+    else cls+=' avail';
+    if(isToday)cls+=' today';
+    let noteAttr='';if(note){const ns=note.replace(/"/g,'').replace(/'/g,'');noteAttr=` onmouseenter="showCalTip(event,'${ns} \u2013 Belegt')" onmouseleave="hideCalTip()"`;}else if(booked){noteAttr=` onmouseenter="showCalTip(event,'Belegt')" onmouseleave="hideCalTip()"`; }
+    html+=`<div class="${cls}"${noteAttr}>${day}</div>`;
+  }
+  html+='</div></div>';
+  return html;
+}
+
+function renderCal(){
+  const now=new Date();
+  const y0=now.getFullYear();const m0=now.getMonth();
+  const m1=(m0+calOffset);
+  const year1=y0+Math.floor(m1/12);const month1=((m1%12)+12)%12;
+  const m2=m1+1;
+  const year2=y0+Math.floor(m2/12);const month2=((m2%12)+12)%12;
+  g('calLabel').textContent=MONTHS[month1]+' / '+MONTHS[month2]+' '+year1;
+  const el=g('calMonths');
+  if(el)el.innerHTML=renderMonthCal(year1,month1)+renderMonthCal(year2,month2);
+}
+
+function calPrev(){calOffset=Math.max(calOffset-2,-24);renderCal()}
+function calNext(){calOffset=Math.min(calOffset+2,36);renderCal()}
+
+function showCalTip(e,msg){
+  const t=g('calTooltip');if(!t)return;
+  t.textContent=msg;t.style.display='block';
+  t.style.left=(e.clientX+12)+'px';t.style.top=(e.clientY-30)+'px';
+}
+function hideCalTip(){const t=g('calTooltip');if(t)t.style.display='none';}
+
+/* ══════════════════════════════════════════
+   FAQ RENDER
+══════════════════════════════════════════ */
+function renderFaq(){
+  const d=D();
+  const el=g('faqGrid');
+  if(!el)return;
+  el.innerHTML=(d.faq||DEF.faq).map(item=>`
+    <div class="faq-it">
+      <div class="faq-q" onclick="toggleFaq(this)">${esc(item.q)}</div>
+      <div class="faq-a">${esc(item.a)}</div>
+    </div>`).join('');
+}
+function toggleFaq(el){el.closest('.faq-it').classList.toggle('open')}
+
+/* ══════════════════════════════════════════
+   NAV / UI
+══════════════════════════════════════════ */
+window.addEventListener('scroll',()=>{
+  g('mainNav').classList.toggle('scrolled',window.scrollY>60);
+});
+function toggleMob(){g('mobMenu').classList.toggle('open')}
+function closeMob(){g('mobMenu').classList.remove('open')}
+function actTab(t,ev){
+  document.querySelectorAll('.tab-cnt').forEach(e=>e.classList.remove('active'));
+  document.querySelectorAll('.act-tab').forEach(e=>e.classList.remove('active'));
+  g('tab-'+t).classList.add('active');
+  if(ev&&ev.target)ev.target.classList.add('active');
+}
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{
+  const b=g('heroBgImg');
+  if(b)b.style.transform='translateY('+(window.scrollY*.15)+'px)';
+});
+function submitForm(e){
+  e.preventDefault();
+  const d=D();
+  const form=e.target;
+  const inputs=form.querySelectorAll('input,select,textarea');
+  const vals={};
+  inputs.forEach(inp=>{if(inp.name||inp.placeholder)vals[inp.placeholder||inp.name]=inp.value;});
+  // Build mailto
+  const vorname=form.querySelector('input[placeholder="Max"]')?.value||'';
+  const nachname=form.querySelector('input[placeholder="Mustermann"]')?.value||'';
+  const email=form.querySelector('input[type="email"]')?.value||'';
+  const tel=form.querySelector('input[type="tel"]')?.value||'';
+  const anreise=form.querySelectorAll('input[type="date"]')[0]?.value||'';
+  const abreise=form.querySelectorAll('input[type="date"]')[1]?.value||'';
+  const gaeste=form.querySelector('select')?.value||'';
+  const msg=form.querySelector('textarea')?.value||'';
+  const subject=encodeURIComponent('Buchungsanfrage Sonnenblick Montafon – '+(vorname+' '+nachname).trim());
+  const body=encodeURIComponent(
+    'Buchungsanfrage – Sonnenblick Montafon\n\n'+
+    'Name: '+vorname+' '+nachname+'\n'+
+    'E-Mail: '+email+'\n'+
+    'Telefon: '+(tel||'—')+'\n\n'+
+    'Anreise: '+(anreise||'—')+'\n'+
+    'Abreise: '+(abreise||'—')+'\n'+
+    'Gäste: '+(gaeste||'—')+'\n\n'+
+    'Nachricht:\n'+(msg||'—')
+  );
+  const mailTo=d.mail||DEF.mail;
+  window.location.href='mailto:'+mailTo+'?subject='+subject+'&body='+body;
+  setTimeout(()=>{
+    g('formOk').style.display='block';
+    g('formOk').textContent=d.formOk||DEF.formOk;
+    form.style.display='none';
+  },600);
+}
+
+/* ══════════════════════════════════════════
+   ADMIN PANEL
+══════════════════════════════════════════ */
+function openAdmin(){
+  g('adminOverlay').classList.add('open');
+  g('adminLogin').style.display='flex';
+  g('adminBody').classList.remove('vis');
+  g('adminPw').value='';g('adminErr').style.display='none';
+}
+function closeAdmin(){g('adminOverlay').classList.remove('open')}
+g('adminOverlay').addEventListener('click',function(e){if(e.target===this)closeAdmin()});
+
+function checkPw(){
+  const d=D();
+  if(v('adminPw')===d.adminPw){
+    g('adminLogin').style.display='none';
+    g('adminBody').classList.add('vis');
+    fillAdmin();
+  } else {
+    g('adminErr').style.display='block';
+  }
+}
+
+function aTab(name,btn){
+  document.querySelectorAll('.adm-sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.adm-tab').forEach(t=>t.classList.remove('on'));
+  g('asec-'+name).classList.add('on');
+  btn.classList.add('on');
+}
+
+function toast(msg){
+  const t=g('adminToast');t.textContent=msg||'Gespeichert ✓';t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+function fillAdmin(){
+  const d=D();
+  // Allgemein
+  const fields=['name','slogan','addr1','addr2','ci','co','badge','navCta','pageTitle',
+    's1','s2','s3','s4','s5','s6','s7','footDesc'];
+  fields.forEach(k=>{const e=g('a-'+k);if(e)e.value=d[k]!==undefined?d[k]:DEF[k]});
+  // Hero
+  const hf=['heroBg','h1','h2','hTag','hBtn1','hBtn2','visBg','visCaption','visLabel'];
+  hf.forEach(k=>{const e=g('a-'+k);if(e)e.value=d[k]!==undefined?d[k]:DEF[k]});
+  // Gallery
+  const gUrls=d.gUrls||DEF.gUrls;
+  const gLabels=d.gLabels||DEF.gLabels;
+  const thumbEl=g('galThumbGrid');
+  const fieldsEl=g('galFields');
+  if(thumbEl)thumbEl.innerHTML=gUrls.map((u,i)=>`
+    <div class="gal-adm-thumb">
+      <img src="${esc(u)}" alt="Bild ${i+1}" onerror="this.style.opacity=.1">
+      <span>Bild ${i+1}</span>
+    </div>`).join('');
+  if(fieldsEl)fieldsEl.innerHTML=gUrls.map((u,i)=>`
+    <div class="af-row" style="margin-bottom:8px">
+      <div class="af"><label>Bild ${i+1} URL</label><input id="gi-url-${i}" value="${esc(u)}" oninput="previewGalImg(${i})"></div>
+      <div class="af"><label>Bild ${i+1} Label</label><input id="gi-lbl-${i}" value="${esc(gLabels[i]||'')}"></div>
+    </div>`).join('');
+  // Calendar
+  const bookings=d.bookings||[];
+  renderCalAdm(bookings);
+  const e2=['calTitle','calSub','calNote'];
+  e2.forEach(k=>{const e=g('a-'+k);if(e)e.value=d[k]!==undefined?d[k]:DEF[k]});
+  // Prices
+  const pf=['p1n','p1p','p1m','p2n','p2p','p2m','p3n','p3p','p3m','clean','kur'];
+  pf.forEach(k=>{const e=g('a-'+k);if(e)e.value=d[k]!==undefined?d[k]:DEF[k]});
+  // Links
+  const lf=['nav1','nav2','nav3','nav4','nav5','nav6',
+    'w1','w1t','w2','w2t','w3','w3t','w4','w4t','w5','w5t',
+    'wt1','wt2','wt3','wt4','wt5','impr','dsgvo','agb','buchB'];
+  lf.forEach(k=>{const e=g('l-'+k);const dk='l'+k.charAt(0).toUpperCase()+k.slice(1);
+    if(e)e.value=d[dk]!==undefined?d[dk]:DEF[dk]});
+  // Contact
+  const cf=['mail','tel','wa','mapDest','mapEmbed','formDesc','formOk'];
+  cf.forEach(k=>{const e=g('a-'+k);if(e)e.value=d[k]!==undefined?d[k]:DEF[k]});
+  // FAQ
+  renderFaqAdm(d.faq||DEF.faq);
+  // Texte
+  const tf=['visEye','visTitle','visLead','f1h','f1p','f2h','f2p','f3h','f3p','lageLead','preisLead','bk1h','bk1p','bk2h','bk2p'];
+  tf.forEach(k=>{const e=g('t-'+k);if(e)e.value=d[k]!==undefined?d[k]:DEF[k]});
+  // GitHub token
+  const gt=g('a-ghtoken');if(gt)gt.value=ghToken()?'••••••••••••••••••••':'';
+}
+
+function previewGalImg(i){
+  const url=v('gi-url-'+i);
+  const thumbs=document.querySelectorAll('.gal-adm-thumb img');
+  if(thumbs[i])thumbs[i].src=url;
+}
+
+/* ── Calendar admin ── */
+function renderCalAdm(bookings){
+  const el=g('calBookList');
+  if(!el)return;
+  if(!bookings||!bookings.length){
+    el.innerHTML='<div style="font-size:13px;color:#444;padding:8px 0">Noch keine Buchungen eingetragen.</div>';
+    return;
+  }
+  el.innerHTML=bookings.map((b,i)=>`
+    <div class="cal-book-entry">
+      <div><label style="font-size:10px;color:#444;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:4px">Anreise</label>
+        <input type="date" id="b-from-${i}" value="${esc(b.from||'')}"></div>
+      <div><label style="font-size:10px;color:#444;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:4px">Abreise</label>
+        <input type="date" id="b-to-${i}" value="${esc(b.to||'')}"></div>
+      <div><label style="font-size:10px;color:#444;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:4px">Notiz (optional)</label>
+        <input id="b-note-${i}" value="${esc(b.note||'')}" placeholder="z.B. Familie Muster"></div>
+      <button class="cal-del-btn" onclick="delBooking(${i})">✕ Löschen</button>
+    </div>`).join('');
+}
+
+function addBooking(){
+  const d=D();
+  const bk=d.bookings||[];
+  bk.push({from:'',to:'',note:''});
+  SD({bookings:bk});
+  renderCalAdm(bk);
+}
+
+function delBooking(i){
+  const d=D();
+  const bk=d.bookings||[];
+  bk.splice(i,1);
+  SD({bookings:bk});
+  renderCalAdm(bk);
+  renderCal();
+}
+
+/* ── FAQ admin ── */
+function renderFaqAdm(faq){
+  const el=g('faqAdmList');
+  if(!el)return;
+  el.innerHTML=faq.map((item,i)=>`
+    <div style="background:rgba(255,255,255,.02);border:1px solid #1e1e1e;padding:14px;margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <span style="font-size:11px;color:#555;letter-spacing:.1em;text-transform:uppercase">FAQ #${i+1}</span>
+        <button class="cal-del-btn" onclick="delFaq(${i})">✕</button>
+      </div>
+      <div class="af"><label>Frage</label><input id="fq-${i}" value="${esc(item.q)}"></div>
+      <div class="af"><label>Antwort</label><textarea id="fa-${i}" rows="2">${esc(item.a)}</textarea></div>
+    </div>`).join('');
+}
+
+function addFaq(){
+  const d=D();
+  const faq=d.faq||DEF.faq;
+  faq.push({q:'Neue Frage?',a:'Antwort hier eintragen.'});
+  SD({faq});renderFaqAdm(faq);
+}
+
+function delFaq(i){
+  const d=D();
+  const faq=d.faq||DEF.faq;
+  faq.splice(i,1);SD({faq});renderFaqAdm(faq);renderFaq();
+}
+
+/* ── SAVE functions ── */
+function saveAllg(){
+  ghSave(()=>{SD({
+    name:v('a-name'),slogan:v('a-slogan'),addr1:v('a-addr1'),addr2:v('a-addr2'),
+    ci:v('a-ci'),co:v('a-co'),badge:v('a-badge'),navCta:v('a-navCta'),
+    pageTitle:v('a-pageTitle'),
+    s1:v('a-s1'),s2:v('a-s2'),s3:v('a-s3'),s4:v('a-s4'),
+    s5:v('a-s5'),s6:v('a-s6'),s7:v('a-s7'),
+    footDesc:v('a-footDesc')
+  });apply();});
+}
+function saveHero(){
+  ghSave(()=>{SD({heroBg:v('a-heroBg'),h1:v('a-h1'),h2:v('a-h2'),hTag:v('a-hTag'),
+    hBtn1:v('a-hBtn1'),hBtn2:v('a-hBtn2'),
+    visBg:v('a-visBg'),visCaption:v('a-visCaption'),visLabel:v('a-visLabel')});apply();});
+}
+function saveGal(){
+  ghSave(()=>{
+    const n=8;
+    const gUrls=Array.from({length:n},(_,i)=>v('gi-url-'+i));
+    const gLabels=Array.from({length:n},(_,i)=>v('gi-lbl-'+i));
+    SD({gUrls,gLabels});apply();
+  });
+}
+function saveKal(){
+  ghSave(()=>{
+    const d=D();
+    const bk=(d.bookings||[]).map((b,i)=>({
+      from:v('b-from-'+i)||'',to:v('b-to-'+i)||'',note:v('b-note-'+i)||''
+    })).filter(b=>b.from||b.to);
+    SD({bookings:bk,calTitle:v('a-calTitle'),calSub:v('a-calSub'),calNote:v('a-calNote')});
+    apply();renderCal();
+  });
+}
+function savePreis(){
+  ghSave(()=>{SD({p1n:v('a-p1n'),p1p:v('a-p1p'),p1m:v('a-p1m'),
+    p2n:v('a-p2n'),p2p:v('a-p2p'),p2m:v('a-p2m'),
+    p3n:v('a-p3n'),p3p:v('a-p3p'),p3m:v('a-p3m'),
+    clean:v('a-clean'),kur:v('a-kur')});apply();});
+}
+function saveLinks(){
+  ghSave(()=>{SD({
+    lNav1:v('l-nav1'),lNav2:v('l-nav2'),lNav3:v('l-nav3'),
+    lNav4:v('l-nav4'),lNav5:v('l-nav5'),lNav6:v('l-nav6'),
+    lW1:v('l-w1'),lW1t:v('l-w1t'),lW2:v('l-w2'),lW2t:v('l-w2t'),
+    lW3:v('l-w3'),lW3t:v('l-w3t'),lW4:v('l-w4'),lW4t:v('l-w4t'),
+    lW5:v('l-w5'),lW5t:v('l-w5t'),
+    lWt1:v('l-wt1'),lWt2:v('l-wt2'),lWt3:v('l-wt3'),lWt4:v('l-wt4'),lWt5:v('l-wt5'),
+    lImpr:v('l-impr'),lDsgvo:v('l-dsgvo'),lAgb:v('l-agb'),lBuchB:v('l-buchB')
+  });apply();});
+}
+function saveKtkt(){
+  ghSave(()=>{SD({mail:v('a-mail'),tel:v('a-tel'),wa:v('a-wa'),
+    mapDest:v('a-mapDest'),mapEmbed:v('a-mapEmbed'),
+    formDesc:v('a-formDesc'),formOk:v('a-formOk')});apply();});
+}
+function saveFaq(){
+  ghSave(()=>{
+    const d=D();
+    const faq=(d.faq||DEF.faq).map((_,i)=>({q:v('fq-'+i),a:v('fa-'+i)}));
+    SD({faq});apply();
+  });
+}
+function saveTexte(){
+  ghSave(()=>{SD({
+    visEye:v('t-visEye'),visTitle:g('t-visTitle')?g('t-visTitle').value:'',visLead:v('t-visLead'),
+    f1h:v('t-f1h'),f1p:v('t-f1p'),f2h:v('t-f2h'),f2p:v('t-f2p'),f3h:v('t-f3h'),f3p:v('t-f3p'),
+    lageLead:v('t-lageLead'),preisLead:v('t-preisLead'),
+    bk1h:v('t-bk1h'),bk1p:v('t-bk1p'),bk2h:v('t-bk2h'),bk2p:v('t-bk2p')
+  });apply();});
+}
+function saveGhToken(){
+  const t=v('a-ghtoken').trim();
+  if(!t){alert('Bitte Token eingeben.');return;}
+  setGhToken(t);
+  toast('GitHub Token gespeichert ✓');
+}
+function savePw(){
+  const p1=v('a-pw1'),p2=v('a-pw2'),err=g('pwErr');
+  if(!p1){err.textContent='Bitte Passwort eingeben.';err.style.display='block';return}
+  if(p1!==p2){err.textContent='Passwörter stimmen nicht überein.';err.style.display='block';return}
+  ghSave(()=>{SD({adminPw:p1});err.style.display='none';});
+}
+
+/* ══════════════════════════════════════════
+   INIT
+══════════════════════════════════════════ */
+apply();
+loadFromGitHub();
+</script>
+</body>
+</html>
