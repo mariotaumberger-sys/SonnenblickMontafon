@@ -1251,7 +1251,7 @@ async function loadFromGitHub(){
     });
     if(!res.ok)return; // no data.json yet → use defaults
     const json=await res.json();
-    const content=JSON.parse(atob(json.content.replace(/\n/g,'')));
+    const raw=atob(json.content.replace(/\n/g,''));const content=JSON.parse(decodeURIComponent(raw.split('').map(c=>'%'+('00'+c.charCodeAt(0).toString(16)).slice(-2)).join('')));
     // Merge into local: github is source of truth
     localStorage.setItem('sb2',JSON.stringify(Object.assign({},D(),content)));
     apply();
@@ -1284,7 +1284,7 @@ async function saveToGitHub(){
 
   const body={
     message:'Admin update – Sonnenblick Montafon',
-    content:btoa(unescape(encodeURIComponent(JSON.stringify(toSave,null,2)))),
+    content:btoa(encodeURIComponent(JSON.stringify(toSave,null,2)).replace(/%([0-9A-F]{2})/g,(_,p)=>String.fromCharCode('0x'+p))),
     branch:'main'
   };
   if(sha)body.sha=sha;
